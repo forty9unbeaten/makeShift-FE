@@ -1,6 +1,5 @@
 import React from 'react';
-import { Sidebar, Menu, Icon, Checkbox } from "semantic-ui-react"
-import "./Sidebar.css"
+import { Sidebar, Menu, Checkbox, Divider} from "semantic-ui-react"
 
 function App() {
   return (
@@ -13,20 +12,39 @@ function App() {
       vertical
       visible
       width='thin'
+      style={{
+        backgroundColor: "white",
+        borderRight: "1px solid lightgray"
+        }}
     >
-      <Checkbox label='Make my profile visible' />
-      <Menu.Item as='a'>
-        <Icon name='home' />
-        Home
-      </Menu.Item>
-      <Menu.Item as='a'>
-        <Icon name='gamepad' />
-        Games
-      </Menu.Item>
-      <Menu.Item as='a'>
-        <Icon name='camera' />
-        Channels
-      </Menu.Item>
+
+      <h3>Sort By</h3>
+      
+      <Divider/>
+      <Checkbox
+        radio label= "Popularity"
+        />
+      <Checkbox
+        radio label= "Most Recent"
+        />
+              
+      <h3>Filter By</h3>
+      <Divider/>
+      <Checkbox 
+        label='Criteria 1' 
+        />
+      <Checkbox 
+        label='Criteria 2' 
+        />
+      <Checkbox 
+        label='Criteria 3' 
+        />
+      <Checkbox 
+        label='Criteria 4' 
+        />
+      <Checkbox 
+        label='Criteria 5' 
+        />
     </Sidebar>
 
     </div>
