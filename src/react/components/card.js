@@ -1,7 +1,7 @@
 import React from 'react'
 import { Card, Icon, Image } from 'semantic-ui-react'
 
-export const CardExampleCard = () => (
+export const Card = () => (
   <Card>
     <Image style={{height:'290px', width:'290px', overflow: 'hidden'}} src='https://images-na.ssl-images-amazon.com/images/I/81B1N%2BCJfEL._SX425_.jpg' wrapped ui={false} />
     <Card.Content>
