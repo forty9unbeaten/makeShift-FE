@@ -1,16 +1,16 @@
 import React from 'react'
-import { Card, Icon, Image } from 'semantic-ui-react'
+import { Card, Image } from 'semantic-ui-react'
 
-export const Card = () => (
+export const ExampleCard = () => (
   <Card>
-    <Image style={{height:'290px', width:'290px', overflow: 'hidden'}} src='https://images-na.ssl-images-amazon.com/images/I/81B1N%2BCJfEL._SX425_.jpg' wrapped ui={false} />
+    <Image style={{height:'290px', width:'290px', overflow: 'hidden'}} src={product.productImgs[0]} wrapped ui={false} />
     <Card.Content>
-      <Card.Header>Umbreon</Card.Header>
+<Card.Header>{product.productName}</Card.Header>
       <Card.Meta>
-        <span className='category'>pokemon</span>
+<span className='category'>{product.productCategory}</span>
       </Card.Meta>
       <Card.Description>
-        this is where the description goes. asdf e3imowe iae eof jao s;f ia oe iae eifehi fehi ashei o 
+        {product.productDescription}
       </Card.Description>
     </Card.Content>
     <Card.Content extra>
@@ -25,3 +25,21 @@ export const Card = () => (
     </Card.Content>
   </Card>
 )
+
+
+// {
+//   "product": {
+//     "productId": 0,
+//     "productName": "string",
+//     "productDescription": "string",
+//     "productImgs": [
+//       "string"
+//     ],
+//     "productCategory": "string",
+//     "ratingsCount": 0,
+//     "ratings": [
+//       0
+//     ]
+//   },
+//   "statusCode": 0
+// }

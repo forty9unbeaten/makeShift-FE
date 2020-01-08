@@ -1,5 +1,5 @@
 import React from 'react';
-import {CardExampleCard} from './react/components/card.js'
+import {CardExampleCard} from './react/components/ExampleCard.js/index.js'
 export { Switch, Route, Link } from "react-router-dom";
 import pages from ".react/pages";
 
