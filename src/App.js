@@ -1,52 +1,44 @@
 import React from 'react';
-import { Sidebar, Menu, Checkbox, Divider} from "semantic-ui-react"
+import "./3rd.css"
+import { Carousel, } from 'antd';
+import { Rating } from 'semantic-ui-react'
+// import ReactDOM from 'react-dom';
 
 function App() {
+  
+  function onChange(a, b, c) {
+    console.log(a, b, c);
+  }
+
+
   return (
-    <div id= "sidebar">
-     <Sidebar
-      as={Menu}
-      animation='overlay'
-      icon='labeled'
-      inverted
-      vertical
-      visible
-      width='thin'
-      style={{
-        backgroundColor: "white",
-        borderRight: "1px solid lightgray"
-        }}
-    >
-
-      <h3>Sort By</h3>
+    
+    <div id ="wholeThing">
+    <div id="pictureBox">
+     <Carousel afterChange={onChange}>
+      <div className ="slide">
+      <img src="https://cdn.thingiverse.com/assets/bd/99/61/67/40/featured_preview_fussleiste_innere_ecke_90.stl"></img>
       
-      <Divider/>
-      <Checkbox
-        radio label= "Popularity"
-        />
-      <Checkbox
-        radio label= "Most Recent"
-        />
-              
-      <h3>Filter By</h3>
-      <Divider/>
-      <Checkbox 
-        label='Criteria 1' 
-        />
-      <Checkbox 
-        label='Criteria 2' 
-        />
-      <Checkbox 
-        label='Criteria 3' 
-        />
-      <Checkbox 
-        label='Criteria 4' 
-        />
-      <Checkbox 
-        label='Criteria 5' 
-        />
-    </Sidebar>
-
+    </div>
+    <div className="slide">
+    <img src="https://assets.pinshape.com/uploads/image/file/189701/container_superstrings-puzzle-3d-printing-189701.jpg"></img>
+      
+    </div>
+    <div className="slide">
+      <img src="https://assets.pinshape.com/uploads/image/file/189702/container_superstrings-puzzle-3d-printing-189702.jpg"></img>
+    </div>
+    <div className ="slide">
+      <img src="https://assets.pinshape.com/uploads/image/file/2632/container_elephant-3d-printing-2632.jpg"></img>
+    </div>
+  </Carousel>
+    </div>
+    <div id="description">
+      <h2>Design Title</h2>
+      <h3>Author/Date</h3>
+      <p>Product description Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+      <Rating icon='star' defaultRating={4} maxRating={5} disabled/>
+      <span>Rating</span>
+    </div>
     </div>
   );
 }
