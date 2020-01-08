@@ -1,11 +1,10 @@
 import React from "react";
-import { Footer, Menu, MenuBody } from "./components";
+import { Footer, Menu, SideBar } from "./components";
 
 function App() {
   return (
     <div>
       <Menu />
-      <MenuBody />
       <Footer />
     </div>
   );
