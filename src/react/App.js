@@ -1,5 +1,5 @@
 import React from "react";
-import { Footer, Menu, SideBar } from "./components";
+import { Footer, Menu } from "./components";
 
 function App() {
   return (
