@@ -1,9 +1,10 @@
 import React from 'react'
 import { Card, Image } from 'semantic-ui-react'
 
-export const ExampleCard = () => (
-  <Card>
-    <Image style={{height:'290px', width:'290px', overflow: 'hidden'}} src={product.productImgs[0]} wrapped ui={false} />
+const product = props.product
+export const ProductCard = () => (
+  <Card style={{width: '225px'}}>
+    <Image style={{height:'225px', width:'225px', overflow: 'hidden', margin: 'auto'}} src={product.productImgs[0]} wrapped ui={false} />
     <Card.Content>
 <Card.Header>{product.productName}</Card.Header>
       <Card.Meta>
