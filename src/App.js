@@ -1,14 +1,15 @@
 import React from 'react';
-// import {Tab} from "./react/components"
-import { MyTab } from './react/components/Tab.js'
+import  MyMenu  from './react/components/MyMenu.js'
+import MenuBody from './react/components/MyMenuBody.js'
 
 
 function App() {
   return (
     <div>
-      <MyTab />
+      <MyMenu />
+      <MenuBody />
     </div>
   );
-}
+};
 
 export default App;
