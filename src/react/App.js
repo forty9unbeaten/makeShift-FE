@@ -1,17 +1,15 @@
 import React from "react";
 import { Footer, Menu } from "./components";
-<<<<<<< HEAD
 import {ExampleCard} from './components/ExampleCard.js'
-=======
->>>>>>> 03735f551e854064991fa4c82c0c5b633f76a017
+
+
 
 function App() {
   return (
     <div>
       <Menu />
-<<<<<<< HEAD
       <ExampleCard/>
-=======
+
       {/* 
         This is where routes will be defined
           1. create route array of objects in seperate file 
@@ -21,7 +19,7 @@ function App() {
           2. import that route array into this file
           3. map over route array to create routes
       */}
->>>>>>> 03735f551e854064991fa4c82c0c5b633f76a017
+
       <Footer />
     </div>
   );
