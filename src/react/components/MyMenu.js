@@ -29,13 +29,13 @@ class MyMenu extends React.Component {
           Category 2
         </Menu.Item>
 
-        <Menu.Item
+        {/* <Menu.Item
           name='Category3'
           active={activeItem === 'Category3'}
           onClick={this.handleItemClick}
         >
           Category 3
-        </Menu.Item>
+        </Menu.Item> */}
 
         <div className="webName">Website Name</div>
         <div className="logoPlace"></div>
