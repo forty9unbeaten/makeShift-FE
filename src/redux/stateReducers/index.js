@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import { connectRouter } from "connected-react-router";
+import * as products from "./products";
 
-
-export default history =>
+export default () => {
   combineReducers({
-    router: connectRouter(history),
+    products: combineReducers(products)
   });
+};
