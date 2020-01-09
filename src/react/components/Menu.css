@@ -1,14 +1,13 @@
 .ui.menu {
     display: flex;
     flex-direction: row-reverse;
-    /* width: 50%; */
     margin: auto;
 }
 
 .webName {
     display: flex;
     align-self: center;
-    margin-right: auto;
+    margin-right: 0;
 }
 
 .logoPlace {
@@ -19,5 +18,31 @@
     border: 1px solid black;
     margin-right: 10px;
     margin-left: 10px;
+    background-image: url("img/bridge.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
+.ui.grid {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.six.wide.column {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.ui.search {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.ui.icon.input {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}

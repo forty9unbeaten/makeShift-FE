@@ -1,5 +1,6 @@
 import React from "react";
 import { Menu } from "semantic-ui-react";
+import SearchBar from "./Search.js";
 import "./Menu.css";
 
 class MyMenu extends React.Component {
@@ -13,28 +14,22 @@ class MyMenu extends React.Component {
     return (
       <Menu className="mainMenu">
         <Menu.Item
-          name="Category1"
-          active={activeItem === "Category1"}
+          name="CATALOG"
+          active={activeItem === "CATALOG"}
           onClick={this.handleItemClick}
         >
-          Category 1
+          CATALOG
         </Menu.Item>
 
         <Menu.Item
-          name="Category2"
-          active={activeItem === "Category2"}
+          name="HOME"
+          active={activeItem === "HOME"}
           onClick={this.handleItemClick}
         >
-          Category 2
+          HOME
         </Menu.Item>
 
-        {/* <Menu.Item
-          name='Category3'
-          active={activeItem === 'Category3'}
-          onClick={this.handleItemClick}
-        >
-          Category 3
-        </Menu.Item> */}
+        <SearchBar />
 
         <div className="webName">Website Name</div>
         <div className="logoPlace"></div>

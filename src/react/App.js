@@ -1,12 +1,11 @@
 import React from "react";
 import { Footer, Menu } from "./components";
-import {ExampleCard} from './components/ExampleCard.js'
-import { Switch, Route } from "./components";
-import pages from "./pages";
+import { Switch, Route } from "react-router";
 
-class App extends React.Component {
-  render() {
-    return (
+function App() {
+  return (
+    <React.Fragment>
+      <Menu />
       <Switch>
         {Object.entries(pages).map(([routeName, routeObj]) => (
           <Route
@@ -17,13 +16,9 @@ class App extends React.Component {
           />
         ))}
       </Switch>
-    );
-  }
+      <Footer />
+    </React.Fragment>
+  );
 }
-
-export default App;
-
-
-
 
 
