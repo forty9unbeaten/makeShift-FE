@@ -1,7 +1,7 @@
 import { GET_ALL_PRODUCTS } from "../../actionTypes"
 
 initialState = {
-    product: null,
+    products: null,
     loading: false,
     error: false
 }
@@ -18,7 +18,7 @@ export const getAllProducts = (state = initialState, action) => {
             return {
                 ...state,
                 loading: false,
-                product: action.payload,
+                products: action.payload,
             }
         case GET_ALL_PRODUCTS.FAIL:
             return {
