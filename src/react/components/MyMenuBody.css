@@ -1,4 +1,18 @@
-.ui.items {
-    /* width: 50%; */
-    margin: auto;
+.menuBody {
+    border: 3px solid #eaeaea;
+    height: 225px;
+    background-image: url("img/bridge.jpeg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.menuDesc {
+    margin-top: 6%;
+    margin-left: 3%;
+    color: white;
+}
+
+.webDescription {
+    width: 30%;
 }
