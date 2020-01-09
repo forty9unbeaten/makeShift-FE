@@ -1,18 +1,32 @@
 .menuBody {
-    border: 3px solid #eaeaea;
-    height: 225px;
-    background-image: url("img/bridge.jpeg");
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
+  height: 420px;
+  background-image: url("img/hero.jpeg"),
+    linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25));
+  background-blend-mode: overlay;
+  background-size: cover;
+  background-position: center 70%;
+  background-repeat: no-repeat;
 }
 
 .menuDesc {
-    margin-top: 6%;
-    margin-left: 3%;
-    color: white;
+  height: 420px;
+  width: 550px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 5%;
+  margin-bottom: 10px;
 }
 
-.webDescription {
-    width: 30%;
+.menuDesc__heading {
+  font-size: 44px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.menuDesc__subheading {
+  font-size: 18px;
+  color: white;
+  font-weight: lighter;
+  line-height: 1.65;
 }

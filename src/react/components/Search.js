@@ -1,49 +1,51 @@
-import _ from 'lodash'
-import faker from 'faker'
-import React, { Component } from 'react'
-import { Search, Grid, Header, Segment } from 'semantic-ui-react'
+import _ from "lodash";
+import faker from "faker";
+import React, { Component } from "react";
+import { Search, Grid, Header, Segment } from "semantic-ui-react";
 
-const initialState = { isLoading: false, results: [], value: '' }
+const initialState = { isLoading: false, results: [], value: "" };
 
 const source = _.times(5, () => ({
   title: faker.company.companyName(),
   description: faker.company.catchPhrase(),
   image: faker.internet.avatar(),
-  price: faker.finance.amount(0, 100, 2, '$'),
-}))
+  price: faker.finance.amount(0, 100, 2, "$")
+}));
 
 export default class SearchBar extends Component {
-  state = initialState
+  state = initialState;
 
-  handleResultSelect = (e, { result }) => this.setState({ value: result.title })
+  handleResultSelect = (e, { result }) =>
+    this.setState({ value: result.title });
 
   handleSearchChange = (e, { value }) => {
-    this.setState({ isLoading: true, value })
+    this.setState({ isLoading: true, value });
 
     setTimeout(() => {
-      if (this.state.value.length < 1) return this.setState(initialState)
+      if (this.state.value.length < 1) return this.setState(initialState);
 
-      const re = new RegExp(_.escapeRegExp(this.state.value), 'i')
-      const isMatch = (result) => re.test(result.title)
+      const re = new RegExp(_.escapeRegExp(this.state.value), "i");
+      const isMatch = result => re.test(result.title);
 
       this.setState({
         isLoading: false,
-        results: _.filter(source, isMatch),
-      })
-    }, 300)
-  }
+        results: _.filter(source, isMatch)
+      });
+    }, 300);
+  };
 
   render() {
-    const { isLoading, value, results } = this.state
+    const { isLoading, value, results } = this.state;
 
     return (
       <Grid>
         <Grid.Column width={6}>
           <Search
+            placeholder="Search designs"
             loading={isLoading}
             onResultSelect={this.handleResultSelect}
             onSearchChange={_.debounce(this.handleSearchChange, 500, {
-              leading: true,
+              leading: true
             })}
             results={results}
             value={value}
@@ -63,6 +65,6 @@ export default class SearchBar extends Component {
           </Segment>
         </Grid.Column> */}
       </Grid>
-    )
+    );
   }
 }

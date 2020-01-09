@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css?family=Orbitron&display=swap");
+
+/* This style rule is to keep the footer at bottom of page if 
+content is shorter than height of screen */
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.app__footer {
+  margin-top: auto;
+}
