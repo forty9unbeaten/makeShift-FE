@@ -1,11 +1,10 @@
 import React from "react";
-import { Footer, Menu } from "./components";
-import { Switch, Route } from "react-router";
+import { Switch, Route } from "./components";
+import pages from "./pages";
 
-function App() {
-  return (
-    <React.Fragment>
-      <Menu />
+class App extends React.Component {
+  render() {
+    return (
       <Switch>
         {Object.entries(pages).map(([routeName, routeObj]) => (
           <Route
@@ -16,9 +15,8 @@ function App() {
           />
         ))}
       </Switch>
-      <Footer />
-    </React.Fragment>
-  );
+    );
+  }
 }
 
-
+export default App;
