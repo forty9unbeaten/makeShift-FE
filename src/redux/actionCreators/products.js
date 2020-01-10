@@ -1,5 +1,5 @@
-import { GET_ALL_PRODUCTS, GET_PRODUCT } from "../actionTypes";
-import { domain, handleJsonResponse, handle401Error } from "./constants";
+import { GET_ALL_PRODUCTS, GET_PRODUCT, POST_PRODUCT } from "../actionTypes";
+import { domain, handleJsonResponse, handle401Error, jsonHeaders } from "./constants";
 
 URL = domain + "/products";
 
@@ -48,3 +48,35 @@ export const getAllProducts = () => {
       );
   };
 };
+
+export const postProduct = product => {
+  return dispatch => {
+    dispatch({
+      type: POST_PRODUCT.START
+    });
+
+    return fetch(URL, {
+      method: "POST",
+      headers: {
+        ...jsonHeaders
+      },
+      body: JSON.stringify({ product })
+    })
+      .then(response => handleJsonResponse(response))
+      .then(data => {
+        dispatch({
+          type: POST_PRODUCT.SUCCESS,
+          payload: data.product
+        });
+        return dispatch(getAllProducts());
+      })
+      .catch(error => {
+        handle401Error(error, dispatch);
+        return dispatch({
+          type: POST_PRODUCT.FAIL,
+          payload: error
+        });
+      });
+  };
+};
+
