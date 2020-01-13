@@ -6,5 +6,8 @@
 } */
 
 .ui.sidebar {
-    height: 50%!important;
+    z-index: -5 !important;
 }
+/* .ui.inverted.vertical.labeled.icon.ui.overlay.left.thin.visible.sidebar.menu{
+    postiion: sticky;
+} */

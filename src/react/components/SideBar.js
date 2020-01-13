@@ -19,7 +19,7 @@ function SideBar() {
         
           }}
       >
-  
+        <div style={{height: '65px'}}/>
         <h3>Sort By</h3>
         
         <Divider/>
