@@ -1,5 +1,4 @@
 import React from "react";
-import { ExampleCard } from "../components/ExampleCard.js";
 import { getAllProducts } from "../../redux/actionCreators";
 import { connect } from "react-redux";
 import { store } from "../../index.js";
