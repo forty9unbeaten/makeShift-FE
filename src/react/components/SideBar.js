@@ -33,19 +33,16 @@ function SideBar() {
         <h3>Filter By</h3>
         <Divider/>
         <Checkbox 
-          label='Criteria 1' 
+          label='Plumbing' 
           />
         <Checkbox 
-          label='Criteria 2' 
+          label='Hardware' 
           />
         <Checkbox 
-          label='Criteria 3' 
+          label='Kitchenware' 
           />
         <Checkbox 
-          label='Criteria 4' 
-          />
-        <Checkbox 
-          label='Criteria 5' 
+          label='Containers' 
           />
       </Sidebar>
   
