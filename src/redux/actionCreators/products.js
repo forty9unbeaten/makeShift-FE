@@ -45,7 +45,7 @@ export const getAllProducts = () => {
       .catch(error => {
         dispatch({
           type: GET_ALL_PRODUCTS.FAIL,
-          payload: error.message
+          payload: error
         });
       });
   };
