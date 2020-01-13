@@ -22,7 +22,6 @@ class MyMenu extends React.Component {
           CATALOG
         </Menu.Item>
 
-
         <Menu.Item
           name='HOME'
           active={activeItem === 'HOME'}
@@ -31,7 +30,7 @@ class MyMenu extends React.Component {
           HOME
         </Menu.Item>
 
-       <SearchBar />
+        <SearchBar />
 
         <div className="webName">Website Name</div>
         <div className="logoPlace"></div>
