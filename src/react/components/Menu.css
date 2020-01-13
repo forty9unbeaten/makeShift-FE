@@ -1,48 +1,151 @@
-.ui.menu {
-    display: flex;
-    flex-direction: row-reverse;
-    margin: auto;
-}
-
-.webName {
-    display: flex;
-    align-self: center;
-    margin-right: 0;
-}
-
-.logoPlace {
-    display: flex;
-    align-self: center;
-    height: 25px;
-    width: 25px;
-    border: 1px solid black;
-    margin-right: 10px;
-    margin-left: 10px;
-    background-image: url("img/bridge.jpeg");
-    background-size: cover;
-    background-repeat: no-repeat;
+/*layout*/
+.links-wrapper {
+  display: flex;
+  margin-left: 3.5em;
 }
 
 .ui.grid {
-    display: flex;
-    justify-content: center;
-    margin: auto;
+  display: flex;
+  justify-content: center;
+  margin: 0.1em;
 }
 
 .six.wide.column {
-    display: flex;
-    justify-content: center;
-    margin: auto;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  margin: 0.1em;
+}
+
+/* block */
+.logo {
+  display: flex;
+  align-items: center;
+  margin-left: 0.7em;
+}
+
+.mainMenu {
+  height: 150px;
+}
+
+.ui.menu {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+/* element */
+.logo__text {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1em;
+  color: #218191;
+}
+
+.logo__icon {
+  height: 25px;
+  width: 25px;
+  margin-top: 0.5em;
+  margin-right: 0.4em;
+  background-image: url("img/logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.ui.menu .item:before {
+  background: none;
+}
+
+.ui.menu .active.item {
+  background: none;
+  color: #218191;
+  font-weight: bolder;
+}
+
+.ui.menu .active.item:hover {
+  color: #218191;
 }
 
 .ui.search {
-    display: flex;
-    justify-content: center;
-    margin: auto;
+  width: 230px;
+  display: flex;
+  justify-content: center;
 }
 
 .ui.icon.input {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+div.ui.mainMenu.menu {
+  margin-bottom: 0;
+}
+
+/***********************/
+/* Styling for Desktop */
+
+@media only screen and (min-width: 601px) {
+  /*layout*/
+  .links-wrapper {
+    display: flex;
+  }
+
+  .ui.grid {
     display: flex;
     justify-content: center;
     margin: auto;
+  }
+
+  .six.wide.column {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+  }
+
+  .ui.grid > .column:only-child {
+    display: flex;
+    justify-content: center;
+  }
+
+  /* block */
+  .logo {
+    display: flex;
+    align-items: center;
+    margin-left: 2.8em;
+  }
+
+  .mainMenu {
+    height: 70px;
+  }
+
+  .ui.menu {
+    display: flex;
+    flex-direction: row-reverse;
+    padding-right: 2.8em;
+  }
+
+  /* element */
+  .logo__text {
+    font-size: 2em;
+  }
+
+  .logo__icon {
+    height: 50px;
+    width: 50px;
+    margin-top: 0.4em;
+    margin-right: 0.8em;
+  }
+
+  .ui.icon.input {
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+  }
+
+  .ui.search {
+    width: 400px;
+    display: flex;
+    justify-content: center;
+  }
 }

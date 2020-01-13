@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
 import * as products from "./products";
 
-export default () => {
-  combineReducers({
-    products: combineReducers(products)
-  });
-};
+export const masterReducer = combineReducers({
+  allProducts: products.getAllProducts,
+  singleProduct: products.getSingleProduct,
+  newProduct: products.postProduct
+});

@@ -17,6 +17,7 @@ class MyMenu extends React.Component {
       <Menu className="mainMenu">
         
         <Link to='/category'>
+          
         <Menu.Item
           name="CATALOG"
           active={activeItem === "CATALOG"}
@@ -37,9 +38,10 @@ class MyMenu extends React.Component {
         </Link>
 
         <SearchBar />
-
-        <div className="webName">Website Name</div>
-        <div className="logoPlace"></div>
+        <div className="logo">
+          <div className="logo__icon"></div>
+          <div className="logo__text">makeshift</div>
+        </div>
       </Menu>
     );
   }
