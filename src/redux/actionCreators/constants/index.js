@@ -1,4 +1,4 @@
-export const domain = "https://printcatalog-capstone.herokuapp.com/";
+export const domain = "https://printcatalog-capstone.herokuapp.com";
 
 export const jsonHeaders = {
   "Content-Type": "application/json",

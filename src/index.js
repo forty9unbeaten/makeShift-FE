@@ -5,9 +5,13 @@ import thunk from "redux-thunk";
 import { BrowserRouter } from "react-router-dom";
 import { App } from "./react";
 import { createStore, applyMiddleware } from "redux";
-import { default as masterReducer } from "./redux/stateReducers";
+import { masterReducer } from "./redux/stateReducers";
+import { composeWithDevTools } from "redux-devtools-extension";
 
-const store = createStore(masterReducer, applyMiddleware(thunk));
+export const store = createStore(
+  masterReducer,
+  composeWithDevTools(applyMiddleware(thunk))
+);
 
 ReactDOM.render(
   <Provider store={store}>
