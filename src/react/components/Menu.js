@@ -13,21 +13,23 @@ class MyMenu extends React.Component {
 
     return (
       <Menu className="mainMenu">
-        <Menu.Item
-          name="CATALOG"
-          active={activeItem === "CATALOG"}
-          onClick={this.handleItemClick}
-        >
-          CATALOG
-        </Menu.Item>
+        <div className="links-wrapper">
+          <Menu.Item
+            name="HOME"
+            active={activeItem === "HOME"}
+            onClick={this.handleItemClick}
+          >
+            HOME
+          </Menu.Item>
 
-        <Menu.Item
-          name="HOME"
-          active={activeItem === "HOME"}
-          onClick={this.handleItemClick}
-        >
-          HOME
-        </Menu.Item>
+          <Menu.Item
+            name="CATALOG"
+            active={activeItem === "CATALOG"}
+            onClick={this.handleItemClick}
+          >
+            CATALOG
+          </Menu.Item>
+        </div>
 
         <SearchBar />
         <div className="logo">
