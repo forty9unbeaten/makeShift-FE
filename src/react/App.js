@@ -7,7 +7,6 @@ function App() {
   return (
     <div className="app-wrapper">
       <Menu />
-      <MenuBody />
       {/* 
         This is where routes will be defined
           1. create route array of objects in seperate file 
