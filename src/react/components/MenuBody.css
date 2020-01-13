@@ -1,18 +1,66 @@
+/* Layout */
 .menuBody {
-    border: 3px solid #eaeaea;
-    height: 225px;
-    background-image: url("img/bridge.jpeg");
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
+  height: 400px;
+  background-image: url("img/hero.jpeg"),
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1));
+  background-blend-mode: overlay;
+  background-size: cover;
+  background-position: 20% center;
+  background-repeat: no-repeat;
 }
 
+/* Block */
 .menuDesc {
-    margin-top: 6%;
-    margin-left: 3%;
-    color: white;
+  height: 420px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 4.5em;
+  margin-left: 1.2em;
 }
 
-.webDescription {
-    width: 30%;
+/* Element */
+.menuDesc__heading {
+  width: 250px;
+  font-size: 2em;
+  color: white;
+  margin-bottom: 0.3em;
+}
+
+.menuDesc__subheading {
+  width: 225px;
+  font-size: 1.05em;
+  color: white;
+  font-weight: lighter;
+  line-height: 1.5;
+}
+
+/***********************/
+/* Styling for Desktop */
+
+@media only screen and (min-width: 601px) {
+  /* Layout */
+  .menuBody {
+    height: 420px;
+    background-image: url("img/hero.jpeg"),
+      linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.1));
+    background-position: center 70%;
+  }
+
+  /* Block */
+  .menuDesc {
+    margin-top: 8em;
+    margin-left: 5em;
+  }
+
+  /* Element */
+  .menuDesc__heading {
+    width: 550px;
+    font-size: 3.2em;
+  }
+
+  .menuDesc__subheading {
+    width: 500px;
+    font-size: 1.3em;
+    line-height: 1.6;
+  }
 }
