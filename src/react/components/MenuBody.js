@@ -28,10 +28,5 @@ class MyMenuBody extends React.Component {
         )
     }
 }
-//                 </Item.Description>
-//             </Item.Content>
-//         </Item>
-//     </Item.Group>
-// )
 
 export default MyMenuBody
