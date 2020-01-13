@@ -1,4 +1,4 @@
-import { GET_ALL_PRODUCTS, GET_PRODUCT, POST_PRODUCT } from "../actionTypes";
+import { GET_ALL_PRODUCTS, GET_PRODUCT, POST_PRODUCT, DELETE_PRODUCT, EDIT_PRODUCT } from "../actionTypes";
 import { domain, handleJsonResponse, handle401Error, jsonHeaders } from "./constants";
 
 URL = domain + "/products";
@@ -68,7 +68,6 @@ export const postProduct = product => {
           type: POST_PRODUCT.SUCCESS,
           payload: data.product
         });
-        return dispatch(getAllProducts());
       })
       .catch(error => {
         handle401Error(error, dispatch);
@@ -79,4 +78,66 @@ export const postProduct = product => {
       });
   };
 };
+
+export const deleteProduct = productId => {
+  return dispatch => {
+    dispatch({
+      type: DELETE_PRODUCT.START
+    });
+
+    return fetch(URL + `/${productId}`, {
+      method: "DELETE",
+      headers: { 
+        ...jsonHeaders
+      }
+    })
+      .then(response => handleJsonResponse(response))
+      .then(data => {
+        dispatch({
+          type: DELETE_PRODUCT.SUCCESS
+        });
+      })
+      .catch(error => {
+        handle401Error(error, dispatch);
+        dispatch({
+          type: DELETE_PRODUCT.FAIL,
+          payload: error
+        });
+      });
+  };
+};
+
+export const editProduct = (productId, modifications) => {
+
+  return dispatch => {
+    dispatch({
+      type: EDIT_PRODUCT.START
+    });
+
+    return fetch(URL + `/${productId}`, {
+      method: "PATCH",
+      headers: {
+        ...jsonHeaders
+      },
+      body: JSON.stringify({
+        modifications
+      })
+    })
+      .then(response => handleJsonResponse(response))
+      .then(data => {
+        dispatch({
+          type: EDIT_PRODUCT.SUCCESS,
+          payload: data.product
+        });
+      })
+      .catch(error => {
+        handle401Error(error, dispatch);
+        dispatch({
+          type: EDIT_PRODUCT.FAIL,
+          payload: error
+        });
+      });
+  };
+};
+
 
