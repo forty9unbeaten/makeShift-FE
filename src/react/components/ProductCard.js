@@ -1,11 +1,11 @@
 import React from "react";
 import { Card, Image } from "semantic-ui-react";
-
+import { store } from "../../index.js";
 // const product = props.product;
-
+// allProducts.products
 const ProductCard = props => {
   return (
-    <Card style={{ width: "225px" }}>
+    <Card style={{ width: "225px", margin: '10px' }}>
       <Image
         style={{
           height: "225px",
