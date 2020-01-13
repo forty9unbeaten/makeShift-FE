@@ -1,18 +1,22 @@
 import React, { Component } from "react";
 import "./Footer.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCube, faCopyright } from "@fortawesome/free-solid-svg-icons";
+import { faCopyright } from "@fortawesome/free-solid-svg-icons";
 
 class Footer extends Component {
   render() {
     return (
       <div className="footer">
-        <div className="logo">
-          <FontAwesomeIcon icon={faCube} className="logo__icon" />
-          <p className="logo__text">Website Name</p>
+        <div className="footer_logo">
+          <div className="footer_logo__icon"></div>
+          <div className="footer_logo__text">makeshift</div>
         </div>
         <div className="copyright">
-          <FontAwesomeIcon icon={faCopyright} className="copyright__icon" />
+          <FontAwesomeIcon
+            icon={faCopyright}
+            style={{ color: "white" }}
+            className="copyright__icon"
+          />
           <p className="copyright__text">2020</p>
         </div>
       </div>
