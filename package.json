@@ -9,11 +9,8 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
     "@testing-library/user-event": "^7.2.1",
-<<<<<<< HEAD
-    "faker": "^4.1.0",
-=======
     "antd": "^3.26.6",
->>>>>>> 672ab4db22b630b7509ad79b6fa1966c27e1ab5e
+    "faker": "^4.1.0",
     "react": "^16.12.0",
     "react-copyright": "0.0.1",
     "react-dom": "^16.12.0",

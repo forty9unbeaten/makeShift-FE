@@ -1,13 +1,13 @@
 import React from "react";
-import { Footer, Menu } from "./components";
-import { ProductDetail } from "./components/ProductDetail"
+import { Footer, Menu, MenuBody } from "./components";
+// import { ProductDetail } from "./components/ProductDetail"
 
 function App() {
   return (
     <div>
       <Menu />
-      <ProductDetail/>
-      
+      {/* <ProductDetail/> */}
+      <MenuBody />
       {/* 
         This is where routes will be defined
           1. create route array of objects in seperate file 

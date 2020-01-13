@@ -1,14 +1,8 @@
-<<<<<<< HEAD:src/react/components/MyMenu.js
 import React from 'react'
 import { Menu } from 'semantic-ui-react'
 import  SearchBar from './Search.js'
-import "./MyMenu.css"
+import "./Menu.css"
 
-=======
-import React from "react";
-import { Menu } from "semantic-ui-react";
-import "./Menu.css";
->>>>>>> 672ab4db22b630b7509ad79b6fa1966c27e1ab5e:src/react/components/Menu.js
 
 class MyMenu extends React.Component {
   state = {};
@@ -21,13 +15,8 @@ class MyMenu extends React.Component {
     return (
       <Menu className="mainMenu">
         <Menu.Item
-<<<<<<< HEAD:src/react/components/MyMenu.js
           name='CATALOG'
           active={activeItem === 'CATALOG'}
-=======
-          name="Category1"
-          active={activeItem === "Category1"}
->>>>>>> 672ab4db22b630b7509ad79b6fa1966c27e1ab5e:src/react/components/Menu.js
           onClick={this.handleItemClick}
         >
           CATALOG
@@ -35,13 +24,8 @@ class MyMenu extends React.Component {
 
 
         <Menu.Item
-<<<<<<< HEAD:src/react/components/MyMenu.js
           name='HOME'
           active={activeItem === 'HOME'}
-=======
-          name="Category2"
-          active={activeItem === "Category2"}
->>>>>>> 672ab4db22b630b7509ad79b6fa1966c27e1ab5e:src/react/components/Menu.js
           onClick={this.handleItemClick}
         >
           HOME

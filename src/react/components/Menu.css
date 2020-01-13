@@ -27,22 +27,31 @@
     display: flex;
     justify-content: center;
     margin: auto;
+    width: 400px;
 }
 
 .six.wide.column {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     margin: auto;
+    width: 400px;
 }
 
 .ui.search {
     display: flex;
     justify-content: center;
     margin: auto;
+    width: 400px;
 }
 
 .ui.icon.input {
     display: flex;
     justify-content: center;
     margin: auto;
+    width: 400px;
+}
+
+.ui.grid>.column:only-child  {
+    display: flex;
+    justify-content: center;
 }
