@@ -1,26 +1,32 @@
 import React from "react";
-import { Footer, Menu, MenuBody } from "./components";
-import { ProductDetail } from "./components/ProductDetail";
+import { Footer, Menu } from "./components";
+import { Switch, Route } from "react-router-dom";
+import pages from "./pages";
 import "./App.css";
 
-function App() {
-  return (
-    <div className="app-wrapper">
-      <Menu />
-      {/* 
-        This is where routes will be defined
-          1. create route array of objects in seperate file 
-          with each object having properties:
-            - routePath: the url path to display the page ex '/catalog' 
-            - component: the "component" to show when the routePath is accessed
-          2. import that route array into this file
-          3. map over route array to create routes
-      */}
-      <div className="app__footer">
-        <Footer />
+class App extends React.Component {
+  render() {
+    return (
+      <div className="app-wrapper">
+        <React.Fragment>
+          <Menu />
+          <Switch>
+            {Object.entries(pages).map(([routeName, routeObj]) => (
+              <Route
+                key={routeName}
+                exact
+                path={routeObj.path}
+                component={routeObj.component}
+              />
+            ))}
+          </Switch>
+          <div className="app__footer">
+            <Footer />
+          </div>
+        </React.Fragment>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default App;
