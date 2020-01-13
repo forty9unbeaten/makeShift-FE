@@ -2,7 +2,7 @@ import React from 'react'
 import { Card, Image } from 'semantic-ui-react'
 
 export const ExampleCard = () => (
-  <Card style={{width: '225px'}}>
+  <Card style={{width: '225px', margin: '10px'}}>
     <Image style={{height:'225px', width:'225px', overflow: 'hidden', margin: 'auto'}} src='https://images-na.ssl-images-amazon.com/images/I/81B1N%2BCJfEL._SX425_.jpg' wrapped ui={false} />
     <Card.Content>
       <Card.Header>Umbreon</Card.Header>

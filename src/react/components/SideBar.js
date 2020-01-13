@@ -1,5 +1,6 @@
 import React from 'react';
 import { Sidebar, Menu, Checkbox, Divider} from "semantic-ui-react"
+import './SideBar.css'
 
 function SideBar() {
     return (
@@ -15,9 +16,10 @@ function SideBar() {
         style={{
           backgroundColor: "white",
           borderRight: "1px solid lightgray"
+        
           }}
       >
-  
+        <div style={{height: '65px'}}/>
         <h3>Sort By</h3>
         
         <Divider/>
