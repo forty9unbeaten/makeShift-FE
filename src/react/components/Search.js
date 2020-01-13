@@ -2,8 +2,14 @@ import _ from "lodash";
 import faker from "faker";
 import React, { Component } from "react";
 import { Search, Grid, Header, Segment } from "semantic-ui-react";
+import { getAllProducts } from '../../redux/index';
+import { connect } from "react-redux";
 
 const initialState = { isLoading: false, results: [], value: "" };
+
+const data = getAllProducts()
+
+console.log(data)
 
 const source = _.times(5, () => ({
   title: faker.company.companyName(),
@@ -12,8 +18,14 @@ const source = _.times(5, () => ({
   price: faker.finance.amount(0, 100, 2, "$")
 }));
 
-export default class SearchBar extends Component {
+class SearchBar extends Component {
   state = initialState;
+
+  // componentDidMount = () => {
+  //   this.props.getAllProducts();
+  // };
+
+  
 
   handleResultSelect = (e, { result }) =>
     this.setState({ value: result.title });
@@ -65,6 +77,19 @@ export default class SearchBar extends Component {
           </Segment>
         </Grid.Column> */}
       </Grid>
+
+      
     );
+
+    
+    
   }
+  
 }
+    function mapStateToProps (state) {
+      const { getAllProducts } = state
+      return {
+        
+      };
+
+export default connect(mapDispatchToProps)(SearchBar);
