@@ -1,0 +1,10 @@
+/* 
+
+#sidebar>.ui.inverted.vertical.labeled.icon.ui.overlay.left.thin.visible.sidebar.menu{
+    height: 123px;
+    outline: 1px solid blue;
+} */
+
+.ui.sidebar {
+    height: 50%!important;
+}
