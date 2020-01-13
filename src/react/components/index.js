@@ -3,4 +3,7 @@ export { default as Menu } from "./Menu";
 export { default as MenuBody } from "./MenuBody";
 export { default as SideBar } from "./SideBar";
 export { default as ProductCard } from "./ProductCard";
-// export { default as ProductDetail } from "./ProductDetail";
+export { ExampleCard } from "./ExampleCard";
+
+export { Switch, Route, Link } from "react-router-dom";
+
