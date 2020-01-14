@@ -4,6 +4,7 @@ import React, { Component } from "react";
 import { Search, Grid, Header, Segment } from "semantic-ui-react";
 import { getAllProducts } from '../../redux/index';
 import { connect } from "react-redux";
+import { withRouter } from 'react-router-dom'
 
 
 const data = getAllProducts()
@@ -31,8 +32,8 @@ class SearchBar extends Component {
     }
   };
 
-
   render() {
+    console.log(this.props.history)
 
     return (
       <Grid>
@@ -42,6 +43,7 @@ class SearchBar extends Component {
             onSearchChange={this.handleChange}
             value={this.state.input}
             results={this.state.matches}
+            // onResultSelect = {}
           />
 
         </Grid.Column>
@@ -61,4 +63,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(SearchBar);
+export default withRouter(connect(mapStateToProps)(SearchBar));
