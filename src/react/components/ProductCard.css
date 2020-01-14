@@ -1,0 +1,7 @@
+.ui.card {
+  margin: 1em 1em;
+}
+
+.ui.card > .image {
+  background: none;
+}

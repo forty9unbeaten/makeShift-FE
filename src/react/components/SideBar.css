@@ -21,3 +21,11 @@
 .ui.thin.left.sidebar {
   width: 170px;
 }
+
+.ui.radio.checkbox {
+  min-height: 25px;
+}
+
+.ui.checkbox {
+  min-height: 25px;
+}
