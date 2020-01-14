@@ -1,8 +1,7 @@
 import React from "react";
 import { Card, Image } from "semantic-ui-react";
 import { Link } from "react-router-dom";
-// const product = props.product;
-// allProducts.products
+
 const ProductCard = props => {
   return (
     <Card style={{ width: "225px", margin: "10px" }}>

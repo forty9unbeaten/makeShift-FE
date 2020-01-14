@@ -10,7 +10,9 @@ class App extends React.Component {
     return (
       <div className="app-wrapper">
         <React.Fragment>
-          <Menu />
+          <div className="app__header">
+            <Menu />
+          </div>
           <Switch>
             {Object.entries(pages).map(([routeName, routeObj]) => (
               <Route
