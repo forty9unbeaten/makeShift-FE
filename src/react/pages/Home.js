@@ -75,10 +75,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-const mapStateToProps = state => {
-  return {
-    products: state.allProducts.products
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(null, mapDispatchToProps)(Home);
