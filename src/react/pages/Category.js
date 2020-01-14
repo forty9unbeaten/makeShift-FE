@@ -40,13 +40,11 @@ class Category extends React.Component {
     let products = this.getProducts()
     console.log(products)
     if (products[0]){
-      console.log('sadness')
     return (
       <>
      <SideBar/>
      <h1 style = {{width: '100%', margin: 'auto', marginLeft: '160px'}}>Catalog</h1>
      <div style ={{display: 'flex', flexWrap:'wrap', width: '75%', margin: 'auto', marginLeft: '160px'}}>
-     <ExampleCard/>
      <ExampleCard/>
      {products.map(product => (
               <ProductCard
@@ -77,44 +75,3 @@ const mapStateToProps = state => {
 
 export default connect(mapStateToProps, mapDispatchToProps)(Category);
 
-
-
-
-
-//   render() {
-//     const topFour = this.getFourMostPopularProducts();
-//     return (
-//       <React.Fragment>
-//         <MenuBody />
-//         <h3>Most Popular</h3>
-//         <div className="Home-mostPopular">
-//           {topFour.map(product => (
-//             <ProductCard
-//               key={product.id}
-//               id={product.id}
-//               name={product.productName}
-//               description={product.productDescription}
-//               imgs={product.productImgs}
-//             />
-//           ))}
-//         </div>
-//       </React.Fragment>
-// //     );
-// //   }
-// }
-
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     getAllProducts: () => {
-//       dispatch(getAllProducts());
-//     }
-//   };
-// };
-
-// const mapStateToProps = state => {
-//   return {
-//     products: state.allProducts.products
-//   };
-// };
-
-// export default connect(mapStateToProps, mapDispatchToProps)(Home);

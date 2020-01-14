@@ -7,21 +7,11 @@ export const ExampleCard = () => (
     <Card.Content>
       <Card.Header>Umbreon</Card.Header>
       <Card.Meta>
-        <span className='category'>pokemon</span>
+        <span className='category'>Dark</span>
       </Card.Meta>
       <Card.Description>
-        this is where the description goes. asdf e3imowe iae eof jao 
+      Umbreon is the bestest dark doggo. They evolved as a result of exposure to the moon's waves. The rings on its body glow when excited.
       </Card.Description>
-    </Card.Content>
-    <Card.Content extra>
-    <span class="left floated like">
-      <i class="like icon"></i>
-      Like
-     </span>
-     <span class="right floated star">
-       <i class="star icon"></i>
-      Favorite
-     </span>
     </Card.Content>
   </Card>
 )

@@ -24,16 +24,6 @@ const ProductCard = props => {
         </Card.Meta>
         <Card.Description>{props.product.productDescription}</Card.Description>
       </Card.Content>
-      <Card.Content extra>
-        <span class="left floated like">
-          <i class="like icon"></i>
-          Like
-        </span>
-        <span class="right floated star">
-          <i class="star icon"></i>
-          Favorite
-        </span>
-      </Card.Content>
     </Card>
   );
 };
