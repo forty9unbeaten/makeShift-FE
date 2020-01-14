@@ -48,14 +48,11 @@ class Category extends React.Component {
      <div style ={{display: 'flex', flexWrap:'wrap', width: '75%', margin: 'auto', marginLeft: '160px'}}>
      <ExampleCard/>
      <ExampleCard/>
-     <ProductCard product = {products[0]}/>
-     <ProductCard product = {products[1]}/>
-     <ProductCard product = {products[2]}/>
-     <ProductCard product = {products[3]}/>
-     <ProductCard product = {products[4]}/>
-     <ProductCard product = {products[5]}/>
-     <ProductCard product = {products[6]}/>
-     <ProductCard product = {products[7]}/>
+     {products.map(product => (
+              <ProductCard
+                product = {product}
+              />
+            ))}
      </div>
      </>
     );
@@ -80,53 +77,9 @@ const mapStateToProps = state => {
 
 export default connect(mapStateToProps, mapDispatchToProps)(Category);
 
-// export default Category
-// import React from "react";
-// import { getAllProducts } from "../../redux/actionCreators";
-// import { connect } from "react-redux";
-// import { MenuBody, ProductCard } from "../components/index.js";
 
-// class Home extends React.Component {
-//   constructor(props) {
-//     super(props);
 
-//     this.state = {
-//       products: []
-//     };
-//   }
 
-//   componentDidMount = () => {
-//     this.props.getAllProducts();
-//   };
-
-// //   componentDidUpdate = previousProps => {
-// //     if (this.props.products && previousProps.products !== this.props.products) {
-// //       this.setState({ products: this.props.products });
-// //     }
-// //   };
-
-//   getFourMostPopularProducts = () => {
-//     const { products } = this.state;
-
-//     if (products.length > 0) {
-//       let sortedProducts = products.sort((a, b) => {
-//         if (a.ratingsCount > b.ratingsCount) {
-//           return -1;
-//         }
-//         if (a.ratingsCount < b.ratingsCount) {
-//           return 1;
-//         }
-//         return 0;
-//       });
-
-//       return sortedProducts.filter(product => {
-//         if (sortedProducts.indexOf(product) < 4) {
-//           return product;
-//         }
-//       });
-//     }
-//     return [];
-//   };
 
 //   render() {
 //     const topFour = this.getFourMostPopularProducts();
