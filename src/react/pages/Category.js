@@ -9,9 +9,10 @@ class Category extends React.Component {
     this.props.getAllProducts();
   };
 
+  // componentDidUpdate
+
   render() {
     let products = store.getState().allProducts.products
-    console.log(products)
     return (
       <>
      <SideBar/>
@@ -27,15 +28,6 @@ class Category extends React.Component {
      <ProductCard product = {products[5]}/>
      <ProductCard product = {products[6]}/>
      <ProductCard product = {products[7]}/>
-     <ExampleCard/>
-     <ExampleCard/>
-     <ExampleCard/>
-     <ExampleCard/>
-     <ExampleCard/>
-     <ExampleCard/>
-     <ExampleCard/>
-     <ExampleCard/>
-     
      </div>
      </>
     );
