@@ -10,23 +10,24 @@ const data = getAllProducts()
 
 class SearchBar extends Component {
 
-  state = { input: "", matches: null};
+  state = { input: "", matches: [] }
 
   handleChange = async (event) => {
     await this.setState({ input: event.target.value })
-    let matchedProducts = []
+    let matchedProducts = [];
     this.props.products.forEach(product => {
-        if (product.productName.toLowerCase().includes(this.state.input.toLowerCase())) {
-           matchedProducts.push({
-            title: product.productName,
-            description: product.productDescription,
-            image: product.productImgs[0]
-          })
-        }
+      if (product.productName.toLowerCase().includes(this.state.input.toLowerCase())) {
+        matchedProducts.push({
+          title: product.productName,
+          description: product.productDescription,
+          image: product.productImgs[0]
+        })
+      }
     });
-    console.log(matchedProducts)
     if (matchedProducts.length > 0) {
       this.setState({ matches: matchedProducts })
+    } else {
+      this.setState({ matches: [] })
     }
   };
 
@@ -39,10 +40,10 @@ class SearchBar extends Component {
           <Search
             placeholder="Search products"
             onSearchChange={this.handleChange}
-            value = {this.state.input}
-            results = {this.state.matches}
+            value={this.state.input}
+            results={this.state.matches}
           />
-          
+
         </Grid.Column>
       </Grid>
 
