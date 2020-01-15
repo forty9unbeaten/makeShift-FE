@@ -50,6 +50,9 @@ class Category extends React.Component {
         }
       }
     }
+    if (!categories[0]){
+      output = products
+    }
     return output
   }
 
@@ -58,7 +61,7 @@ class Category extends React.Component {
 
   render() {
     let products = this.getProducts();
-    let categories = ['Hardware']
+    let categories = ['Kitchenware']
     let filtered = this.filterProducts(categories, products)
     console.log(products);
     if (products[0]) {
@@ -89,7 +92,7 @@ class Category extends React.Component {
                 marginBottom: "3em"
               }}
             >
-              {products.map(product => (
+              {filtered.map(product => (
                 <ProductCard product={product} />
               ))}
             </div>

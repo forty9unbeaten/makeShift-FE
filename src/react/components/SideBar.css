@@ -1,19 +1,9 @@
-/* 
-
-#sidebar>.ui.inverted.vertical.labeled.icon.ui.overlay.left.thin.visible.sidebar.menu{
-    height: 123px;
-    outline: 1px solid blue;
-} */
 
 .ui.sidebar {
-  z-index: -5 !important;
+  z-index: -5 ;
   padding-top: 100px;
 }
-/* .ui.inverted.vertical.labeled.icon.ui.overlay.left.thin.visible.sidebar.menu{
-    postiion: sticky;
-} */
 
-/* block */
 .ui.labeled.icon.menu {
   padding-left: 20px;
   text-align: left;
@@ -35,8 +25,7 @@
   margin-top: 30px;
 }
 
-/***********************/
-/* Styling for Desktop */
+
 
 @media only screen and (min-width: 601px) {
   .ui.sidebar {
