@@ -3,7 +3,8 @@ import {
   GET_PRODUCT,
   POST_PRODUCT,
   DELETE_PRODUCT,
-  EDIT_PRODUCT
+  EDIT_PRODUCT,
+  CHANGE_CATEGORY
 } from "../actionTypes";
 import { domain, handleJsonResponse, jsonHeaders } from "./constants";
 
@@ -141,5 +142,14 @@ export const editProduct = (productId, modifications) => {
           payload: error
         });
       });
+  };
+};
+
+export const filterCategory = categories => {
+  return dispatch => {
+    dispatch({
+      type: CHANGE_CATEGORY,
+      payload: categories
+    });
   };
 };

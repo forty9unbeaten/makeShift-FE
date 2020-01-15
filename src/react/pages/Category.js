@@ -1,25 +1,32 @@
 import React from "react";
 import { SideBar, ProductCard } from "../components";
 import { connect } from "react-redux";
-import { getAllProducts } from "../../redux/actionCreators";
+import { getAllProducts, filterCategory } from "../../redux/actionCreators";
+import "./Category.css";
 
 class Category extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      products: []
+      products: [],
+      filters: []
     };
   }
 
   componentDidMount = () => {
     this.props.getAllProducts();
+    this.props.filterCategory()
   };
 
   componentDidUpdate = previousProps => {
     if (this.props.products && previousProps.products !== this.props.products) {
       this.setState({ products: this.props.products });
     }
+    if (this.props.filters && previousProps.filters !== this.props.filters) {
+      this.setState({ filters: this.props.filters });
+    }
+    
   };
 
   getProducts = () => {
@@ -28,32 +35,73 @@ class Category extends React.Component {
     if (products.length > 0) {
       return products;
     }
+    return [];
+  };
+  
+  getFilters = () => {
+    const { filters } = this.state;
 
+    if (filters.length > 0) {
+      return filters;
+    }
     return [];
   };
 
+  filterProducts = (categories, products) => {
+    let output = []
+    for (let i = 0; i < categories.length; i++){
+      for (let k = 0; k < products.length; k++){
+        if (categories[i] === products[k].productCategory) {
+          output.push(products[k])
+        }
+      }
+    }
+    if (!categories[0]){
+      output = products
+    }
+    return output
+  }
+
+
+
+
   render() {
     let products = this.getProducts();
-    console.log(products);
+    let categories = this.getFilters()
+    console.log(categories)
+    let filtered = this.filterProducts(categories, products)
     if (products[0]) {
       return (
         <>
-          <SideBar />
-          <h1 style={{ width: "100%", margin: "auto", marginLeft: "160px" }}>
-            Catalog
-          </h1>
-          <div
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              width: "75%",
-              margin: "auto",
-              marginLeft: "160px"
-            }}
-          >
-            {products.map(product => (
-              <ProductCard product={product} />
-            ))}
+          <div className="catalog-grid">
+            <SideBar />
+            <h1
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                width: "100%",
+                gridColumnStart: "2",
+                gridColumnEnd: "3",
+                marginTop: "1em"
+              }}
+            >
+              CATALOG
+            </h1>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                flexWrap: "wrap",
+                width: "100%",
+                gridColumnStart: "2",
+                gridColumnEnd: "3",
+                marginBottom: "3em"
+              }}
+            >
+              {filtered.map(product => (
+                <ProductCard product={product} />
+              ))}
+            </div>
           </div>
         </>
       );
@@ -67,13 +115,18 @@ const mapDispatchToProps = dispatch => {
   return {
     getAllProducts: () => {
       dispatch(getAllProducts());
+    },
+
+    filterCategory:() => {
+      dispatch(filterCategory());
     }
   };
 };
 
 const mapStateToProps = state => {
   return {
-    products: state.allProducts.products
+    products: state.allProducts.products,
+    filters: state.filters.categories
   };
 };
 

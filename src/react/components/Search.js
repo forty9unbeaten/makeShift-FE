@@ -1,58 +1,54 @@
-import _ from "lodash";
-import faker from "faker";
 import React, { Component } from "react";
-import { Search, Grid, Header, Segment } from "semantic-ui-react";
+import { Search, Grid } from "semantic-ui-react";
+import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 
-const initialState = { isLoading: false, results: [], value: "" };
+class SearchBar extends Component {
+  state = { input: "", matches: [] };
 
-const source = _.times(5, () => ({
-  title: faker.company.companyName(),
-  description: faker.company.catchPhrase(),
-  image: faker.internet.avatar(),
-  price: faker.finance.amount(0, 100, 2, "$")
-}));
-
-export default class SearchBar extends Component {
-  state = initialState;
-
-  handleResultSelect = (e, { result }) =>
-    this.setState({ value: result.title });
-
-  handleSearchChange = (e, { value }) => {
-    this.setState({ isLoading: true, value });
-
-    setTimeout(() => {
-      if (this.state.value.length < 1) return this.setState(initialState);
-
-      const re = new RegExp(_.escapeRegExp(this.state.value), "i");
-      const isMatch = result => re.test(result.title);
-
-      this.setState({
-        isLoading: false,
-        results: _.filter(source, isMatch)
-      });
-    }, 300);
+  handleChange = async event => {
+    await this.setState({ input: event.target.value });
+    let matchedProducts = [];
+    this.props.products.forEach(product => {
+      if (
+        product.productName
+          .toLowerCase()
+          .includes(this.state.input.toLowerCase())
+      ) {
+        matchedProducts.push({
+          title: product.productName,
+          description: product.productDescription,
+          image: product.productImgs[0]
+        });
+      }
+    });
+    if (matchedProducts.length > 0) {
+      this.setState({ matches: matchedProducts });
+    } else {
+      this.setState({ matches: [] });
+    }
   };
 
   render() {
-    const { isLoading, value, results } = this.state;
-
     return (
       <Grid>
         <Grid.Column width={6}>
           <Search
-            placeholder="Search designs"
-            loading={isLoading}
-            onResultSelect={this.handleResultSelect}
-            onSearchChange={_.debounce(this.handleSearchChange, 500, {
-              leading: true
-            })}
-            results={results}
-            value={value}
-            {...this.props}
+            placeholder="Search products"
+            onSearchChange={this.handleChange}
+            value={this.state.input}
+            results={this.state.matches}
+            // onResultSelect = {}
           />
         </Grid.Column>
       </Grid>
     );
   }
 }
+function mapStateToProps(state) {
+  return {
+    products: state.allProducts.products
+  };
+}
+
+export default withRouter(connect(mapStateToProps)(SearchBar));
