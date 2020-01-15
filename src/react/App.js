@@ -4,7 +4,6 @@ import { Switch, Route } from "react-router-dom";
 import pages from "./pages";
 import "./App.css";
 
-
 class App extends React.Component {
   render() {
     return (
