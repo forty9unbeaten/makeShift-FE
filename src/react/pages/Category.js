@@ -16,7 +16,7 @@ class Category extends React.Component {
 
   componentDidMount = () => {
     this.props.getAllProducts();
-    this.props.filterCategory()
+    this.props.filterCategory();
   };
 
   componentDidUpdate = previousProps => {
@@ -26,7 +26,6 @@ class Category extends React.Component {
     if (this.props.filters && previousProps.filters !== this.props.filters) {
       this.setState({ filters: this.props.filters });
     }
-    
   };
 
   getProducts = () => {
@@ -37,7 +36,7 @@ class Category extends React.Component {
     }
     return [];
   };
-  
+
   getFilters = () => {
     const { filters } = this.state;
 
@@ -48,28 +47,25 @@ class Category extends React.Component {
   };
 
   filterProducts = (categories, products) => {
-    let output = []
-    for (let i = 0; i < categories.length; i++){
-      for (let k = 0; k < products.length; k++){
+    let output = [];
+    for (let i = 0; i < categories.length; i++) {
+      for (let k = 0; k < products.length; k++) {
         if (categories[i] === products[k].productCategory) {
-          output.push(products[k])
+          output.push(products[k]);
         }
       }
     }
-    if (!categories[0]){
-      output = products
+    if (!categories[0]) {
+      output = products;
     }
-    return output
-  }
-
-
-
+    return output;
+  };
 
   render() {
     let products = this.getProducts();
-    let categories = this.getFilters()
-    console.log(categories)
-    let filtered = this.filterProducts(categories, products)
+    let categories = this.getFilters();
+
+    let filtered = this.filterProducts(categories, products);
     if (products[0]) {
       return (
         <>
@@ -117,7 +113,7 @@ const mapDispatchToProps = dispatch => {
       dispatch(getAllProducts());
     },
 
-    filterCategory:() => {
+    filterCategory: () => {
       dispatch(filterCategory());
     }
   };
