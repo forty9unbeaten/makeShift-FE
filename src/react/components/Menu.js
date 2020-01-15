@@ -14,24 +14,27 @@ class MyMenu extends React.Component {
 
     return (
       <Menu className="mainMenu">
-        <Link to="/category">
-          <Menu.Item
-            name="CATALOG"
-            active={activeItem === "CATALOG"}
-            onClick={this.handleItemClick}
-          >
-            CATALOG
-          </Menu.Item>
-        </Link>
-        <Link to="/">
-          <Menu.Item
-            name="HOME"
-            active={activeItem === "HOME"}
-            onClick={this.handleItemClick}
-          >
-            HOME
-          </Menu.Item>
-        </Link>
+        <div className="links-wrapper">
+          <Link to="/category">
+            <Menu.Item
+              name="CATALOG"
+              active={activeItem === "CATALOG"}
+              onClick={this.handleItemClick}
+            >
+              CATALOG
+            </Menu.Item>
+          </Link>
+
+          <Link to="/">
+            <Menu.Item
+              name="HOME"
+              active={activeItem === "HOME"}
+              onClick={this.handleItemClick}
+            >
+              HOME
+            </Menu.Item>
+          </Link>
+        </div>
         <SearchBar />
         <div className="logo">
           <div className="logo__icon"></div>
