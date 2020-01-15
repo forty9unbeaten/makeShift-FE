@@ -1,7 +1,7 @@
 import React from "react";
 import { SideBar, ProductCard } from "../components";
 import { connect } from "react-redux";
-import { getAllProducts } from "../../redux/actionCreators";
+import { getAllProducts, filterCategory } from "../../redux/actionCreators";
 import "./Category.css";
 
 class Category extends React.Component {
@@ -9,18 +9,24 @@ class Category extends React.Component {
     super(props);
 
     this.state = {
-      products: []
+      products: [],
+      filters: []
     };
   }
 
   componentDidMount = () => {
     this.props.getAllProducts();
+    this.props.filterCategory()
   };
 
   componentDidUpdate = previousProps => {
     if (this.props.products && previousProps.products !== this.props.products) {
       this.setState({ products: this.props.products });
     }
+    if (this.props.filters && previousProps.filters !== this.props.filters) {
+      this.setState({ filters: this.props.filters });
+    }
+    
   };
 
   getProducts = () => {
@@ -61,9 +67,9 @@ class Category extends React.Component {
 
   render() {
     let products = this.getProducts();
-    let categories = ['Kitchenware']
+    let categories = this.getFilters()
+    console.log(categories)
     let filtered = this.filterProducts(categories, products)
-    console.log(products);
     if (products[0]) {
       return (
         <>
@@ -109,13 +115,18 @@ const mapDispatchToProps = dispatch => {
   return {
     getAllProducts: () => {
       dispatch(getAllProducts());
+    },
+
+    filterCategory:() => {
+      dispatch(filterCategory());
     }
   };
 };
 
 const mapStateToProps = state => {
   return {
-    products: state.allProducts.products
+    products: state.allProducts.products,
+    filters: state.filters.categories
   };
 };
 
