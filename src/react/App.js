@@ -3,7 +3,7 @@ import { Footer, Menu } from "./components";
 import { Switch, Route } from "react-router-dom";
 import pages from "./pages";
 import "./App.css";
-import Detail from "./pages/Detail";
+
 
 class App extends React.Component {
   render() {
