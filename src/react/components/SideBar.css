@@ -7,6 +7,7 @@
 
 .ui.sidebar {
   z-index: -5 !important;
+  padding-top: 100px;
 }
 /* .ui.inverted.vertical.labeled.icon.ui.overlay.left.thin.visible.sidebar.menu{
     postiion: sticky;
@@ -28,4 +29,17 @@
 
 .ui.checkbox {
   min-height: 25px;
+}
+
+.filter {
+  margin-top: 30px;
+}
+
+/***********************/
+/* Styling for Desktop */
+
+@media only screen and (min-width: 601px) {
+  .ui.sidebar {
+    padding-top: 50px;
+  }
 }
