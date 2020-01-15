@@ -1,11 +1,10 @@
 import React from "react";
 import { Card, Image } from "semantic-ui-react";
-import { store } from "../../index.js";
-// const product = props.product;
-// allProducts.products
+import { Link } from "react-router-dom";
+
 const ProductCard = props => {
   return (
-    <Card style={{ width: "225px", margin: '10px' }}>
+    <Card style={{ width: "225px", margin: "10px" }}>
       <Image
         style={{
           height: "225px",
@@ -18,7 +17,11 @@ const ProductCard = props => {
         ui={false}
       />
       <Card.Content>
-        <Card.Header>{props.product.productName}</Card.Header>
+        <Card.Header>
+          <Link to={`/details/${props.product.id}`}>
+            {props.product.productName}
+          </Link>
+        </Card.Header>
         <Card.Meta>
           <span className="category">{props.product.productCategory}</span>
         </Card.Meta>
@@ -29,4 +32,3 @@ const ProductCard = props => {
 };
 
 export default ProductCard;
-
