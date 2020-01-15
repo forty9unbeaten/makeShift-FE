@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Search, Grid } from "semantic-ui-react";
-import { getAllProducts } from "../../redux/index";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { getSingleProduct } from "../../redux/actionCreators";
