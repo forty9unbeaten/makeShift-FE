@@ -1,7 +1,7 @@
 import React from "react"
 import { connect } from "react-redux";
 import { ProductDetail  } from '../components'
-import { getSingleProduct } from "../../redux/actionCreators";
+import { getSingleProduct, getAllProducts } from "../../redux/actionCreators";
 
 class Detail extends React.Component {
     
@@ -11,6 +11,9 @@ class Detail extends React.Component {
   
     componentDidMount = () => {
         this.props.getSingleProduct(this.props.match.params.id);
+        if (!this.props.allProducts) {
+          this.props.getAllProducts();  
+        }
       };
       
     componentDidUpdate = previousProps => {
@@ -44,13 +47,17 @@ const mapDispatchToProps = dispatch => {
     return {
       getSingleProduct: (productId) => {
         dispatch(getSingleProduct(productId));
+      },
+      getAllProducts: () => {
+        dispatch(getAllProducts())
       }
     };
   };
 
 const mapStateToProps = state => {
     return {
-      product: state.singleProduct.product
+      product: state.singleProduct.product,
+      allProducts: state.allProducts.products
     };
   };
 

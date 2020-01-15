@@ -1,13 +1,13 @@
 import _ from "lodash";
-import faker from "faker";
 import React, { Component } from "react";
-import { Search, Grid, Header, Segment } from "semantic-ui-react";
+import { Search, Grid, } from "semantic-ui-react";
 import { getAllProducts } from '../../redux/index';
 import { connect } from "react-redux";
 import { withRouter } from 'react-router-dom'
+import { getSingleProduct} from '../../redux/actionCreators'
+import './Search.css'
 
 
-const data = getAllProducts()
 
 class SearchBar extends Component {
 
@@ -21,7 +21,8 @@ class SearchBar extends Component {
         matchedProducts.push({
           title: product.productName,
           description: product.productDescription,
-          image: product.productImgs[0]
+          image: product.productImgs[0],
+          price: product.id
         })
       }
     });
@@ -32,9 +33,13 @@ class SearchBar extends Component {
     }
   };
 
-  render() {
-    console.log(this.props.history)
+  handleClick = (event) => {
+    const productId = event.currentTarget.querySelectorAll('.price')[0].innerHTML;
+    this.props.getProduct(productId)
+    this.props.history.push(`/details/${productId}`);
+  }
 
+  render() {
     return (
       <Grid>
         <Grid.Column width={6}>
@@ -43,19 +48,13 @@ class SearchBar extends Component {
             onSearchChange={this.handleChange}
             value={this.state.input}
             results={this.state.matches}
-            // onResultSelect = {}
+            onResultSelect = {this.handleClick}
           />
 
         </Grid.Column>
       </Grid>
-
-
     );
-
-
-
   }
-
 }
 function mapStateToProps(state) {
   return {
@@ -63,4 +62,12 @@ function mapStateToProps(state) {
   };
 }
 
-export default withRouter(connect(mapStateToProps)(SearchBar));
+function mapDispatchToProps(dispatch) {
+  return {
+    getProduct: (productId) => {
+      dispatch(getSingleProduct(productId))
+    }
+  }
+}
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SearchBar));

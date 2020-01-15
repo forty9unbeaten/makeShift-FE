@@ -34,7 +34,7 @@ class Category extends React.Component {
 
   render() {
     let products = this.getProducts();
-    console.log(products);
+    // console.log(products);
     if (products[0]) {
       return (
         <>
