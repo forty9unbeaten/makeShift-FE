@@ -2,6 +2,7 @@ import React from "react";
 import { SideBar, ProductCard } from "../components";
 import { connect } from "react-redux";
 import { getAllProducts } from "../../redux/actionCreators";
+import "./Category.css";
 
 class Category extends React.Component {
   constructor(props) {
@@ -63,22 +64,35 @@ class Category extends React.Component {
     if (products[0]) {
       return (
         <>
-          <SideBar />
-          <h1 style={{ margin: "auto", marginLeft: "160px" }}>
-            Catalog
-          </h1>
-          <div
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              width: "75%",
-              margin: "auto",
-              marginLeft: "160px"
-            }}
-          >
-            {filtered.map(product => (
-              <ProductCard product={product} />
-            ))}
+          <div className="catalog-grid">
+            <SideBar />
+            <h1
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                width: "100%",
+                gridColumnStart: "2",
+                gridColumnEnd: "3",
+                marginTop: "1em"
+              }}
+            >
+              CATALOG
+            </h1>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                flexWrap: "wrap",
+                width: "100%",
+                gridColumnStart: "2",
+                gridColumnEnd: "3",
+                marginBottom: "3em"
+              }}
+            >
+              {products.map(product => (
+                <ProductCard product={product} />
+              ))}
+            </div>
           </div>
         </>
       );

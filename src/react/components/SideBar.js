@@ -18,14 +18,14 @@ function SideBar() {
           borderRight: "1px solid lightgray"
         }}
       >
-        <div style={{ height: "65px" }} />
-        <h3>Sort By</h3>
+        <div style={{ height: "73px" }} />
+        <h3 className="sort">Sort By</h3>
 
         <Divider />
         <Checkbox radio label="Popularity" />
         <Checkbox radio label="Most Recent" />
 
-        <h3>Filter By</h3>
+        <h3 className="filter">Filter By</h3>
         <Divider />
         <Checkbox label="Hardware" />
         <Checkbox label="Plumbing" />

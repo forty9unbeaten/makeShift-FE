@@ -1,40 +1,35 @@
-import _ from "lodash";
-import faker from "faker";
 import React, { Component } from "react";
-import { Search, Grid, Header, Segment } from "semantic-ui-react";
-import { getAllProducts } from '../../redux/index';
+import { Search, Grid } from "semantic-ui-react";
 import { connect } from "react-redux";
-import { withRouter } from 'react-router-dom'
-
-
-const data = getAllProducts()
+import { withRouter } from "react-router-dom";
 
 class SearchBar extends Component {
+  state = { input: "", matches: [] };
 
-  state = { input: "", matches: [] }
-
-  handleChange = async (event) => {
-    await this.setState({ input: event.target.value })
+  handleChange = async event => {
+    await this.setState({ input: event.target.value });
     let matchedProducts = [];
     this.props.products.forEach(product => {
-      if (product.productName.toLowerCase().includes(this.state.input.toLowerCase())) {
+      if (
+        product.productName
+          .toLowerCase()
+          .includes(this.state.input.toLowerCase())
+      ) {
         matchedProducts.push({
           title: product.productName,
           description: product.productDescription,
           image: product.productImgs[0]
-        })
+        });
       }
     });
     if (matchedProducts.length > 0) {
-      this.setState({ matches: matchedProducts })
+      this.setState({ matches: matchedProducts });
     } else {
-      this.setState({ matches: [] })
+      this.setState({ matches: [] });
     }
   };
 
   render() {
-    console.log(this.props.history)
-
     return (
       <Grid>
         <Grid.Column width={6}>
@@ -45,17 +40,10 @@ class SearchBar extends Component {
             results={this.state.matches}
             // onResultSelect = {}
           />
-
         </Grid.Column>
       </Grid>
-
-
     );
-
-
-
   }
-
 }
 function mapStateToProps(state) {
   return {
