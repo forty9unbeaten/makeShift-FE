@@ -28,11 +28,15 @@ class Category extends React.Component {
     const { products } = this.state;
 
     if (products.length > 0) {
-          return products;
-        }
+      return products;
+    }
     
     return [];
   };
+  
+  // filter by category
+    // filtered = products.map(selectedCategory)
+  //sort by # of or average rateing
 
 
 
@@ -74,4 +78,8 @@ const mapStateToProps = state => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Category);
+
+
+
+
 

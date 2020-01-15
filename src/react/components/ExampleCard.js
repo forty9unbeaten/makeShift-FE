@@ -7,7 +7,7 @@ export const ExampleCard = () => (
     <Card.Content>
       <Card.Header>Umbreon</Card.Header>
       <Card.Meta>
-        <span className='category'>Dark</span>
+        <span className='category'>Pokémon</span>
       </Card.Meta>
       <Card.Description>
       Umbreon is the bestest dark doggo. They evolved as a result of exposure to the moon's waves. The rings on its body glow when excited.
