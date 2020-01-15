@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import { Search, Grid } from "semantic-ui-react";
+import { getAllProducts } from "../../redux/index";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
+import { getSingleProduct } from "../../redux/actionCreators";
+import "./Search.css";
 
 class SearchBar extends Component {
   state = { input: "", matches: [] };
@@ -18,7 +21,8 @@ class SearchBar extends Component {
         matchedProducts.push({
           title: product.productName,
           description: product.productDescription,
-          image: product.productImgs[0]
+          image: product.productImgs[0],
+          price: product.id
         });
       }
     });
@@ -27,6 +31,13 @@ class SearchBar extends Component {
     } else {
       this.setState({ matches: [] });
     }
+  };
+
+  handleClick = event => {
+    const productId = event.currentTarget.querySelectorAll(".price")[0]
+      .innerHTML;
+    this.props.getProduct(productId);
+    this.props.history.push(`/details/${productId}`);
   };
 
   render() {
@@ -38,7 +49,7 @@ class SearchBar extends Component {
             onSearchChange={this.handleChange}
             value={this.state.input}
             results={this.state.matches}
-            // onResultSelect = {}
+            onResultSelect={this.handleClick}
           />
         </Grid.Column>
       </Grid>
@@ -51,4 +62,14 @@ function mapStateToProps(state) {
   };
 }
 
-export default withRouter(connect(mapStateToProps)(SearchBar));
+function mapDispatchToProps(dispatch) {
+  return {
+    getProduct: productId => {
+      dispatch(getSingleProduct(productId));
+    }
+  };
+}
+
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(SearchBar)
+);
