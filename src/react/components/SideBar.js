@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Sidebar, Menu, Checkbox, Divider } from "semantic-ui-react";
+import { Sidebar, Menu, Divider } from "semantic-ui-react";
 import "./SideBar.css";
 import { connect } from "react-redux";
 import { filterCategory } from "../../redux/actionCreators";
@@ -16,13 +16,13 @@ class SideBar extends Component {
 
       return categories.map(category => {
         return (
-          <React.Fragment>
+          <React.Fragment key={category}>
             <input
               type="checkbox"
               name={category}
               onChange={this.handleCheck}
-            />
-            <label for={category}>{category}</label>
+            />{" "}
+            <label htmlFor={category}>{category}</label>
             <br />
           </React.Fragment>
         );

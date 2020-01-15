@@ -5,7 +5,7 @@ import "./Menu.css";
 import { Link } from "react-router-dom";
 
 class MyMenu extends React.Component {
-  state = {};
+  state = { activeItem: "HOME" };
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name });
 
@@ -24,7 +24,6 @@ class MyMenu extends React.Component {
               CATALOG
             </Menu.Item>
           </Link>
-
           <Link to="/">
             <Menu.Item
               name="HOME"

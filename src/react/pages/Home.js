@@ -37,11 +37,9 @@ class Home extends React.Component {
         return 0;
       });
 
-      return sortedProducts.filter(product => {
-        if (sortedProducts.indexOf(product) < 4) {
-          return product;
-        }
-      });
+      return sortedProducts.filter(
+        product => sortedProducts.indexOf(product) < 4
+      );
     }
     return [];
   };

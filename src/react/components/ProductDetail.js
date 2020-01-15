@@ -24,10 +24,10 @@ class ProductDetail extends React.Component {
         <div id="pictureBox">
           <Carousel afterChange={this.onChange}>
             <div className="slide">
-              <img src={this.props.imgs[0]}></img>
+              <img alt="Primary" src={this.props.imgs[0]}></img>
             </div>
             <div className="slide">
-              <img src={this.props.imgs[1]}></img>
+              <img alt="secondary" src={this.props.imgs[1]}></img>
             </div>
           </Carousel>
         </div>
