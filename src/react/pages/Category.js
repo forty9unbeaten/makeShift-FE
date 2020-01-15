@@ -31,18 +31,40 @@ class Category extends React.Component {
     return [];
   };
   
-  // filter by category
-    // filtered = products.map(selectedCategory)
-  //sort by # of or average rateing
+  getFilters = () => {
+    const { filters } = this.state;
+
+    if (filters.length > 0) {
+      return filters;
+    }
+    return [];
+  };
+
+  filterProducts = (categories, products) => {
+    let output = []
+    for (let i = 0; i < categories.length; i++){
+      for (let k = 0; k < products.length; k++){
+        if (categories[i] === products[k].productCategory) {
+          output.push(products[k])
+        }
+      }
+    }
+    return output
+  }
+
+
+
 
   render() {
     let products = this.getProducts();
+    let categories = ['Hardware']
+    let filtered = this.filterProducts(categories, products)
     console.log(products);
     if (products[0]) {
       return (
         <>
           <SideBar />
-          <h1 style={{ width: "100%", margin: "auto", marginLeft: "160px" }}>
+          <h1 style={{ margin: "auto", marginLeft: "160px" }}>
             Catalog
           </h1>
           <div
@@ -54,7 +76,7 @@ class Category extends React.Component {
               marginLeft: "160px"
             }}
           >
-            {products.map(product => (
+            {filtered.map(product => (
               <ProductCard product={product} />
             ))}
           </div>
