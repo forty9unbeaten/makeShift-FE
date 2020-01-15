@@ -6,7 +6,6 @@
 } */
 
 .ui.sidebar {
-  z-index: -5 !important;
   padding-top: 100px;
 }
 /* .ui.inverted.vertical.labeled.icon.ui.overlay.left.thin.visible.sidebar.menu{
