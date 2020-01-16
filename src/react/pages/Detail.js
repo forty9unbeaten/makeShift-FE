@@ -1,66 +1,64 @@
-import React from "react"
+import React from "react";
 import { connect } from "react-redux";
-import { ProductDetail  } from '../components'
+import { ProductDetail } from "../components";
 import { getSingleProduct, getAllProducts } from "../../redux/actionCreators";
 
 class Detail extends React.Component {
-    
-    state = {
+  state = {
     product: null
   };
-  
-    componentDidMount = () => {
-        this.props.getSingleProduct(this.props.match.params.id);
-        if (!this.props.allProducts) {
-          this.props.getAllProducts();  
-        }
-      };
-      
-    componentDidUpdate = previousProps => {
-      if (this.props.product && previousProps.product !== this.props.product) {
-        this.setState({ product: this.props.product });
-      }
-}
 
+  componentDidMount = () => {
+    this.props.getSingleProduct(this.props.match.params.id);
+    if (!this.props.allProducts) {
+      this.props.getAllProducts();
+    }
+  };
 
-render() {
-  const {product} = this.state
+  componentDidUpdate = previousProps => {
+    if (this.props.product && previousProps.product !== this.props.product) {
+      this.setState({ product: this.props.product });
+    }
+  };
 
-  return (
-    <>
-     {product && <div style ={{ marginTop: "50px"}}>
-         <ProductDetail
-            name={product.productName}
-            description={product.productDescription}
-            imgs={product.productImgs}
-            ratings={product.ratings}
-            ratingsCount={product.ratingsCount}
-         />
-     </div>}
-     </>
+  render() {
+    const { product } = this.state;
+
+    return (
+      <React.Fragment>
+        {product && (
+          <div style={{ marginTop: "50px" }}>
+            <ProductDetail
+              name={product.productName}
+              description={product.productDescription}
+              imgs={product.productImgs}
+              ratings={product.ratings}
+              ratingsCount={product.ratingsCount}
+            />
+          </div>
+        )}
+      </React.Fragment>
     );
-
   }
 }
 
 const mapDispatchToProps = dispatch => {
-    return {
-      getSingleProduct: (productId) => {
-        dispatch(getSingleProduct(productId));
-      },
-      getAllProducts: () => {
-        dispatch(getAllProducts())
-      }
-    };
+  return {
+    getSingleProduct: productId => {
+      dispatch(getSingleProduct(productId));
+    },
+    getAllProducts: () => {
+      dispatch(getAllProducts());
+    }
   };
+};
 
 const mapStateToProps = state => {
-    return {
-      product: state.singleProduct.product,
-      allProducts: state.allProducts.products
-    };
+  return {
+    product: state.singleProduct.product,
+    allProducts: state.allProducts.products
   };
-
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Detail);
 
