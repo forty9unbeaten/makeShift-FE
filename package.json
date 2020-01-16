@@ -2,7 +2,7 @@
   "name": "3d",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://robsp3ars.gitlab.io/printCatalog",
+  "homepage": "https://robsp3ars.gitlab.io/",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.26",
     "@fortawesome/free-solid-svg-icons": "^5.12.0",
