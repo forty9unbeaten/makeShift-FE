@@ -70,33 +70,37 @@ class Category extends React.Component {
       return (
         <>
           <div className="catalog-grid">
-            <SideBar />
-            <h1
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                width: "100%",
-                gridColumnStart: "2",
-                gridColumnEnd: "3",
-                marginTop: "1em"
-              }}
-            >
-              CATALOG
-            </h1>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                flexWrap: "wrap",
-                width: "100%",
-                gridColumnStart: "2",
-                gridColumnEnd: "3",
-                marginBottom: "3em"
-              }}
-            >
-              {filtered.map(product => (
-                <ProductCard key={product.id} product={product} />
-              ))}
+            <div className="sidebar-wrapper">
+              <SideBar />
+            </div>
+            <div className="catalog-wrapper">
+              <h1
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  width: "100%",
+                  gridColumnStart: "2",
+                  gridColumnEnd: "3",
+                  marginTop: "1em"
+                }}
+              >
+                CATALOG
+              </h1>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  flexWrap: "wrap",
+                  width: "100%",
+                  gridColumnStart: "2",
+                  gridColumnEnd: "3",
+                  marginBottom: "3em"
+                }}
+              >
+                {filtered.map(product => (
+                  <ProductCard key={product.id} product={product} />
+                ))}
+              </div>
             </div>
           </div>
         </>
