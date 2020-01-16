@@ -12,4 +12,4 @@ pages:
   only:
     - master
   variables:
-    PUBLIC_URL: "/printCatalog/"
+    PUBLIC_URL: "printCatalog/"
