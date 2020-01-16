@@ -7,3 +7,5 @@ export const masterReducer = combineReducers({
   newProduct: products.postProduct,
   filters: products.filterCategories
 });
+
+// comment

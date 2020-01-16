@@ -14,3 +14,4 @@ export const DELETE_PRODUCT = createActionTypes("DELETE_PRODUCT");
 export const EDIT_PRODUCT = createActionTypes("EDIT_PRODUCT");
 
 export const CHANGE_CATEGORY = "CHANGE_CATEGORY";
+// comment
