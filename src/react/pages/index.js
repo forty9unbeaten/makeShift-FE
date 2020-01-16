@@ -7,6 +7,6 @@ export default {
   Home: { path: "/", component: Home },
   Detail: { path: "/details/:id", component: Detail },
   Category: { path: "/category", component: Category },
-  NotFound: { path: "*", component: NotFound }
+  NotFound: { path: "/*", component: NotFound }
 };
 // comment
