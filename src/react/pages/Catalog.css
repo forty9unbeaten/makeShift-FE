@@ -13,4 +13,12 @@
   box-shadow: 0 2px 3px grey;
   display: flex;
   align-items: center;
+  z-index: -1;
+}
+
+.Catalog__productContainer {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
