@@ -1,12 +1,11 @@
 import Home from "./Home";
 import Detail from "./Detail";
-import Category from "./Category";
 import NotFound from "./NotFound";
+import Catalog from "./Catalog";
 
 export default {
   Home: { path: "/", component: Home },
   Detail: { path: "/details/:id", component: Detail },
-  Category: { path: "/category", component: Category },
+  Catalog: { path: "/catalog", component: Catalog },
   NotFound: { path: "*", component: NotFound }
 };
-// comment
