@@ -1,16 +1,70 @@
-/* block */
-
-.ui.card {
-  margin: 1em 1em;
-  height: 350px;
+.PC__card {
+  height: 450px;
+  width: 225px;
+  border: 1px solid black;
+  border-radius: 25px;
+  box-shadow: 0 0 3px grey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* element */
-
-.ui.card > .image {
-  background: none;
+.PC__linkWrapper {
+  height: 50%;
+  width: 100%;
 }
 
-.ui.card:first-child {
-  margin-top: 1em;
+.PC__image {
+  height: 100%;
+  width: 100%;
+  border-radius: 25px 25px 0 0;
+  background-position: center;
+  background-size: cover;
+  border-bottom: 0.5px solid black;
+}
+
+.PC__detailContainer {
+  height: 42%;
+  width: 100%;
+  padding: 10px 5px 2px 5px;
+}
+
+.PC__name {
+  display: flex;
+  width: fit-content;
+  font-size: 18px;
+  color: var(--primaryColor);
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.PC__name:hover {
+  color: var(--primaryColor);
+  text-decoration: underline;
+}
+
+.PC__category {
+  width: 100%;
+  font-size: 12px;
+  color: black;
+  border-bottom: 1px solid lightgrey;
+  padding-bottom: 5px;
+}
+
+.PC__description {
+  height: 100%;
+  overflow: hidden;
+}
+
+.PC__ratingsContainer {
+  width: 90%;
+  padding-top: 5px;
+  border-top: 1px solid lightgrey;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.PC__ratings {
+  color: var(--primaryColor);
 }

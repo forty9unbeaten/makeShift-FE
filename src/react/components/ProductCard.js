@@ -1,34 +1,52 @@
-import React from "react";
-import { Card, Image } from "semantic-ui-react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { Rating } from "semantic-ui-react";
+import "./ProductCard.css";
 
-const ProductCard = props => {
-  return (
-    <Card style={{ width: "225px", margin: "10px" }}>
-      <Image
-        style={{
-          height: "225px",
-          width: "225px",
-          overflow: "hidden",
-          margin: "auto"
-        }}
-        src={props.product.productImgs[0]}
-        wrapped
-        ui={false}
-      />
-      <Card.Content>
-        <Card.Header>
-          <Link to={`/details/${props.product.id}`}>
-            {props.product.productName}
+class ProductCard extends Component {
+  getAverageRating = () => {
+    const { ratings } = this.props.product;
+    console.log(ratings);
+    let total = ratings.reduce((accum, value) => accum + value, 0);
+    return total / ratings.length;
+  };
+
+  render() {
+    const {
+      productName,
+      productImgs,
+      id,
+      productCategory,
+      productDescription,
+      ratingsCount
+    } = this.props.product;
+    return (
+      <div className="PC__card">
+        <Link className="PC__linkWrapper" to={`details/${id}`}>
+          <div
+            className="PC__image"
+            style={{ backgroundImage: `url(${productImgs[0]})` }}
+          />
+        </Link>
+        <div className="PC__detailContainer">
+          <Link to={`details/${id}`} className="PC__name">
+            {productName}
           </Link>
-        </Card.Header>
-        <Card.Meta>
-          <span className="category">{props.product.productCategory}</span>
-        </Card.Meta>
-        <Card.Description>{props.product.productDescription}</Card.Description>
-      </Card.Content>
-    </Card>
-  );
-};
+          <div className="PC__category">{productCategory}</div>
+          <div className="PC__description">{productDescription}</div>
+        </div>
+        <div className="PC__ratingsContainer">
+          <Rating
+            className="PC__ratings"
+            disabled={true}
+            rating={this.getAverageRating()}
+            maxRating={5}
+          />
+          <div className="PC__ratingsCount">{ratingsCount} Ratings</div>
+        </div>
+      </div>
+    );
+  }
+}
 
 export default ProductCard;
