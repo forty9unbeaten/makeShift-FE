@@ -1,7 +1,7 @@
 import { CHANGE_SORT, CLEAR_SORT } from "../../actionTypes";
 
 const initialState = {
-  sort: null
+  sort: "Most Popular"
 };
 
 export const sortProducts = (state = initialState, action) => {

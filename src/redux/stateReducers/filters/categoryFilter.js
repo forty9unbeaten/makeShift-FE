@@ -1,7 +1,7 @@
 import { CHANGE_CATEGORY, CLEAR_FILTER } from "../../actionTypes";
 
 const initialState = {
-  category: null
+  category: "All"
 };
 
 export const filterCategories = (state = initialState, action) => {

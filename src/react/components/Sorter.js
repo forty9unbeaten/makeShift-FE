@@ -8,7 +8,7 @@ class Sorter extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      sortText: "Sort By"
+      sortText: "Most Popular"
     };
   }
 
@@ -37,11 +37,19 @@ class Sorter extends Component {
     this.props.clearSort();
   };
 
+  componentDidMount = () => {
+    const activeItem = document
+      .getElementById("Sorter__menu")
+      .getElementsByTagName("span")[0];
+    activeItem.classList.add("activeFilter");
+  };
+
   render() {
     return (
       <Dropdown text={this.state.sortText} button id="Sorter__button">
         <Dropdown.Menu id="Sorter__menu">
           <Dropdown.Item text="Most Popular" onClick={this.applySort} />
+          <Dropdown.Item text="Highest Rated" onClick={this.applySort} />
           <Dropdown.Divider />
           <Dropdown.Item text="Clear" icon="x" onClick={this.clearSort} />
         </Dropdown.Menu>
