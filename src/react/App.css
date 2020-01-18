@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Orbitron&display=swap");
 
+:root {
+  --primaryColor: #1a6762;
+  --primaryFont: "Orbitron", sans-serif;
+}
+
 /* base */
 * {
   margin: 0;
@@ -25,10 +30,11 @@ content is shorter than height of screen */
 .app__header {
   position: sticky;
   top: 0;
-  z-index: 1000;
+  height: 10%;
 }
 
 .app__footer {
+  width: 100%;
+  height: 10%;
   margin-top: auto;
-  z-index: 1000;
 }

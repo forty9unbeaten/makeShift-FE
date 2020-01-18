@@ -1,5 +1,5 @@
 import React from "react";
-import { Footer, Menu } from "./components";
+import { Footer, NavBar } from "./components";
 import { Switch, Route } from "react-router-dom";
 import pages from "./pages";
 import "./App.css";
@@ -10,7 +10,7 @@ class App extends React.Component {
       <div className="app-wrapper">
         <React.Fragment>
           <div className="app__header">
-            <Menu />
+            <NavBar />
           </div>
           <Switch>
             {Object.entries(pages).map(([routeName, routeObj]) => (
