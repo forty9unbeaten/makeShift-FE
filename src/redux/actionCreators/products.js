@@ -144,12 +144,3 @@ export const editProduct = (productId, modifications) => {
       });
   };
 };
-
-export const filterCategory = categories => {
-  return dispatch => {
-    dispatch({
-      type: CHANGE_CATEGORY,
-      payload: categories
-    });
-  };
-};
