@@ -1,92 +1,70 @@
-@import "~antd/dist/antd.css";
-
-/* Layout */
-#wholeThing {
-  margin-top: 0.5em;
+.Detail__container {
+  width: 100%;
+  height: 100%;
   display: flex;
-  flex-direction: column-reverse;
-  margin-left: 1.5em;
+  justify-content: space-evenly;
+  padding: 20px;
 }
 
-/* Block */
-#pictureBox {
-  width: 80%;
-  margin-bottom: 5em;
+.Detail__imgContainer {
+  height: 100%;
+  width: 40%;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
 }
 
-#description {
-  justify-content: left;
-  margin-bottom: 3em;
-  width: 80%;
-}
-
-/* Element */
-span {
-  margin-left: 10px;
-  font-weight: bold;
-}
-
-img {
-  max-width: 100%;
-  max-height: 100%;
-  position: center;
-}
-
-.slide {
+.Detail__mainImg {
   width: 400px;
+  height: 400px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-left: 10px;
 }
 
-.ant-carousel .slick-slide {
-  text-align: center;
-  height: 325px;
-  line-height: 160px;
-  background: lightgray;
-  overflow: hidden;
+.Detail__subImgContainer {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
 }
 
-.ant-carousel .slick-slide h3 {
-  color: #fff;
-}
-
-.ant-carousel .slick-dots li > button {
-  height: 7px;
-  width: 30px;
-  background-color: #3bd9f5e0;
-}
-
-.ant-carousel .slick-dots li.slick-active button {
-  height: 7px;
+.Detail__subImg {
   width: 50px;
-  background-color: #218191;
+  height: 50px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 5px 5px 0 0;
 }
 
-.ant-carousel .slick-dots li.slick-active button:hover,
-.ant-carousel .slick-dots li.slick-active button:focus {
-  height: 7px;
-  width: 50px;
-  background-color: #218191;
+.Detail__subImg.activeImg {
+  box-shadow: 0 0 10px var(--primaryColor);
 }
 
-/***********************/
-/* Styling for Desktop */
+.Detail__descContainer {
+  width: 50%;
+  height: 400px;
+  padding: 20px;
+}
 
-@media only screen and (min-width: 601px) {
-  #wholeThing {
-    margin-top: 3em;
-    margin-left: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
+.Detail__name {
+  color: var(--primaryColor);
+  margin: 0 0 5px 0;
+}
 
-  #description {
-    margin-left: 3em;
-    margin-bottom: 0;
-    width: 250px;
-  }
+.Detail__ratingsContainer {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+}
 
-  #pictureBox {
-    width: 450px;
-    margin-bottom: 5em;
-  }
+.Detail__ratingsCount {
+  margin-left: 10px;
+}
+
+.Detail__descHeader {
+  color: var(--primaryColor);
+  text-decoration: underline;
+  margin: 10px 0 3px 0;
 }

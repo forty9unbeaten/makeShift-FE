@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { ProductDetail } from "../components";
+import { ProductDetail, Loading } from "../components";
 import { getSingleProduct, getAllProducts } from "../../redux/actionCreators";
 
 class Detail extends React.Component {
@@ -26,16 +26,16 @@ class Detail extends React.Component {
 
     return (
       <React.Fragment>
-        {product && (
-          <div style={{ marginTop: "50px" }}>
-            <ProductDetail
-              name={product.productName}
-              description={product.productDescription}
-              imgs={product.productImgs}
-              ratings={product.ratings}
-              ratingsCount={product.ratingsCount}
-            />
-          </div>
+        {product ? (
+          <ProductDetail
+            name={product.productName}
+            description={product.productDescription}
+            imgs={product.productImgs}
+            ratings={product.ratings}
+            ratingsCount={product.ratingsCount}
+          />
+        ) : (
+          <Loading />
         )}
       </React.Fragment>
     );

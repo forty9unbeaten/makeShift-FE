@@ -1,46 +1,61 @@
 import React from "react";
 import "./ProductDetail.css";
-import { Carousel } from "antd";
 import { Rating } from "semantic-ui-react";
 
 class ProductDetail extends React.Component {
-  averageRating = arr => {
-    console.log(arr);
-    let total = 0;
-    for (let i = 0; i < arr.length; i++) {
-      total += arr[i];
-    }
-    return Math.ceil(total / arr.length);
+  getAverageRating = () => {
+    const { ratings } = this.props;
+    const reducer = (accum, value) => accum + value;
+    return Math.floor(ratings.reduce(reducer, 0) / ratings.length);
   };
 
-  onChange = (a, b, c) => {
-    console.log(a, b, c);
+  changeMainPicture = event => {
+    const mainImage = document.getElementsByClassName("Detail__mainImg")[0];
+    const subImages = Array.from(
+      document.getElementsByClassName("Detail__subImg")
+    );
+    subImages.forEach(image => {
+      image.classList.remove("activeImg");
+    });
+    event.target.classList.add("activeImg");
+    mainImage.style.backgroundImage = event.target.style.backgroundImage;
   };
 
   render() {
-    const avgRating = this.averageRating(this.props.ratings);
+    const { name, description, imgs, ratingsCount } = this.props;
+    const avgRating = this.getAverageRating();
     return (
-      <div id="wholeThing">
-        <div id="pictureBox">
-          <Carousel afterChange={this.onChange}>
-            <div className="slide">
-              <img alt="Primary" src={this.props.imgs[0]}></img>
-            </div>
-            <div className="slide">
-              <img alt="secondary" src={this.props.imgs[1]}></img>
-            </div>
-          </Carousel>
-        </div>
-        <div id="description">
-          <h2>{this.props.name}</h2>
-          <p>{this.props.description}</p>
-          <Rating
-            icon="star"
-            defaultRating={avgRating}
-            maxRating={5}
-            disabled
+      <div className="Detail__container">
+        <div className="Detail__imgContainer">
+          <div
+            className="Detail__mainImg"
+            style={{ backgroundImage: `url(${imgs[0]})` }}
           />
-          <span>{this.props.ratingsCount} ratings</span>
+          <div className="Detail__subImgContainer">
+            {imgs.map(img => {
+              return (
+                <div
+                  className={
+                    imgs.indexOf(img) === 0
+                      ? "Detail__subImg activeImg"
+                      : "Detail__subImg"
+                  }
+                  key={imgs.indexOf(img)}
+                  style={{ backgroundImage: `url(${img})` }}
+                  onMouseOver={this.changeMainPicture}
+                />
+              );
+            })}
+          </div>
+        </div>
+        <div className="Detail__descContainer">
+          <h1 className="Detail__name">{name}</h1>
+          <div className="Detail__ratingsContainer">
+            <Rating defaultRating={avgRating} maxRating={5} disabled />
+            <text className="Detail__ratingsCount">{ratingsCount} Ratings</text>
+          </div>
+          <p className="Detail__descHeader">Description</p>
+          <p className="Detail__desc">{description}</p>
         </div>
       </div>
     );
