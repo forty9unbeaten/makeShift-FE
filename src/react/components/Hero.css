@@ -1,0 +1,33 @@
+/* Layout */
+.hero__container {
+  height: 325px;
+  width: 100%;
+  background-image: url("./img/hero.png");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Block */
+.hero__description {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin: 90px 0 0 70px;
+  opacity: 100%;
+}
+
+/* Element */
+.hero__descriptionHead {
+  width: 100%;
+  font-size: 3em;
+  color: white;
+  text-shadow: 2px 2px 0 var(--primaryColor);
+}
+
+.hero__descriptionSubHead {
+  width: 100%;
+  font-size: 1.5em;
+  font-weight: lighter;
+  color: white;
+  text-shadow: 0 0 10px var(--primaryColor);
+}
