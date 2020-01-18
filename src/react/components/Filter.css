@@ -1,0 +1,14 @@
+#Filter__button {
+  color: white;
+  background: none;
+  margin: 5px 5px 5px 10px;
+  border: 0.5px solid white;
+}
+
+#Filter__button .text {
+  width: 125px;
+}
+
+.activeFilter {
+  color: var(--primaryColor);
+}
