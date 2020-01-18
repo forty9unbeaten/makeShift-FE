@@ -1,7 +1,7 @@
 import React from "react";
 import { getAllProducts } from "../../redux/actionCreators";
 import { connect } from "react-redux";
-import { MenuBody, ProductCard } from "../components/index.js";
+import { Hero, ProductCard } from "../components/";
 import "./Home.css";
 
 class Home extends React.Component {
@@ -48,10 +48,10 @@ class Home extends React.Component {
     const topFour = this.getFourMostPopularProducts();
     return (
       <React.Fragment>
-        <MenuBody />
-        <div className="popular-wrapper">
-          <h3 className="popular__heading">Most Popular</h3>
-          <div className="Home-mostPopular">
+        <Hero />
+        <div className="Home__popularWrapper">
+          <h3 className="Home__popularHead">POPULAR DESIGNS</h3>
+          <div className="Home__popularCards">
             {topFour.map(product => (
               <ProductCard key={product.id} product={product} />
             ))}
