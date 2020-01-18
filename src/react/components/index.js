@@ -5,6 +5,7 @@ export { default as ProductCard } from "./ProductCard";
 export { default as ProductDetail } from "./ProductDetail";
 export { default as Filter } from "./Filter";
 export { default as Sorter } from "./Sorter";
+export { default as Loading } from "./Loading";
 
 export { Switch, Route, Link } from "react-router-dom";
 // comment
