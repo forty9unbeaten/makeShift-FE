@@ -1,3 +1,11 @@
 .price {
-    visibility: hidden;
+  visibility: hidden;
+}
+
+.ui.search {
+  width: 80%;
+}
+
+div.ui.icon.input {
+  width: 100%;
 }

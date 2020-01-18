@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Search, Grid } from "semantic-ui-react";
+import { Search } from "semantic-ui-react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { getSingleProduct } from "../../redux/actionCreators";
@@ -41,17 +41,16 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <Grid>
-        <Grid.Column width={6}>
-          <Search
-            placeholder="Search products"
-            onSearchChange={this.handleChange}
-            value={this.state.input}
-            results={this.state.matches}
-            onResultSelect={this.handleClick}
-          />
-        </Grid.Column>
-      </Grid>
+      <Search
+        fluid
+        placeholder="Search Catalog"
+        onSearchChange={this.handleChange}
+        value={this.state.input}
+        results={this.state.matches}
+        onResultSelect={this.handleClick}
+        noResultsMessage="No Matches"
+        noResultsDescription="There are no products in our catalog that match the search term"
+      />
     );
   }
 }
