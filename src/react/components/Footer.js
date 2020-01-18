@@ -6,18 +6,14 @@ import { faCopyright } from "@fortawesome/free-solid-svg-icons";
 class Footer extends Component {
   render() {
     return (
-      <div className="footer">
-        <div className="footer_logo">
-          <div className="footer_logo__icon"></div>
-          <div className="footer_logo__text">makeshift</div>
+      <div className="Footer__container">
+        <div className="Footer__logo">
+          <div className="Footer__logoIcon"></div>
+          <div className="Footer__logoText">MAKESHIFT</div>
         </div>
-        <div className="copyright">
-          <FontAwesomeIcon
-            icon={faCopyright}
-            style={{ color: "white" }}
-            className="copyright__icon"
-          />
-          <p className="copyright__text">2020</p>
+        <div className="Footer__copyright">
+          <FontAwesomeIcon icon={faCopyright} className="Footer__copyIcon" />
+          <p className="Footer__copyText">2020</p>
         </div>
       </div>
     );
