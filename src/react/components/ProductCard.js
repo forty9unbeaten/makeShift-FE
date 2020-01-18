@@ -6,9 +6,8 @@ import "./ProductCard.css";
 class ProductCard extends Component {
   getAverageRating = () => {
     const { ratings } = this.props.product;
-    console.log(ratings);
     let total = ratings.reduce((accum, value) => accum + value, 0);
-    return total / ratings.length;
+    return Math.floor(total / ratings.length);
   };
 
   render() {

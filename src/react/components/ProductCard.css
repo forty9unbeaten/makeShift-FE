@@ -1,16 +1,16 @@
 .PC__card {
-  height: 450px;
-  width: 225px;
-  border: 1px solid black;
+  height: 400px;
+  width: 220px;
   border-radius: 25px;
-  box-shadow: 0 0 3px grey;
+  box-shadow: 0 0 4px black;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 10px;
 }
 
 .PC__linkWrapper {
-  height: 50%;
+  height: 55%;
   width: 100%;
 }
 
@@ -20,11 +20,11 @@
   border-radius: 25px 25px 0 0;
   background-position: center;
   background-size: cover;
-  border-bottom: 0.5px solid black;
+  border-bottom: 0.5px solid lightgrey;
 }
 
 .PC__detailContainer {
-  height: 42%;
+  height: 40%;
   width: 100%;
   padding: 10px 5px 2px 5px;
 }
@@ -35,12 +35,11 @@
   font-size: 18px;
   color: var(--primaryColor);
   font-weight: bold;
-  text-decoration: underline;
 }
 
 .PC__name:hover {
   color: var(--primaryColor);
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .PC__category {
