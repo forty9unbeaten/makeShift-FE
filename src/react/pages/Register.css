@@ -1,0 +1,101 @@
+.Register__container {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.Register__header {
+  margin-top: 20px 0 0 0 !important;
+  color: var(--primaryColor);
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: lighter;
+}
+
+.Register__text {
+  margin-right: 7px;
+  font-family: var(--primaryFont);
+}
+
+.Register__benefits {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.Register__benefitsHead {
+  width: 100%;
+  border-bottom: 2px solid lightgrey;
+  font-size: 22px;
+  font-family: var(--primaryFont);
+  color: var(--primaryColor);
+}
+
+.Register__form {
+  width: 40%;
+  margin-top: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid var(--primaryColor);
+  border-radius: 15px;
+}
+
+.Register__input {
+  width: 60%;
+  margin: 10px 0 10px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Register__input label {
+  font-size: 20px;
+}
+
+.Register__input input {
+  margin-top: 10px;
+  padding: 5px 2px 5px 2px;
+  border-style: none;
+  font-size: 18px;
+  border: 1px solid lightgrey;
+}
+
+.Register__input input:focus {
+  outline: none;
+}
+
+.Register__confirm {
+  display: flex;
+  align-items: center;
+}
+
+.Register__confirm label {
+  margin-right: 5px;
+}
+
+.Register__button {
+  width: 30%;
+  height: 50px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--primaryColor);
+  border-radius: 5px;
+  font-size: 20px;
+  font-family: var(--primaryFont);
+  background: lightgrey;
+}
+
+.Register__button:hover {
+  cursor: pointer;
+  box-shadow: 0 0 7px var(--primaryColor);
+}
