@@ -73,6 +73,7 @@
 
 .navbar__link:hover {
   color: var(--primaryColor);
+  cursor: pointer;
 }
 
 .active {
@@ -82,4 +83,86 @@
 
 .active:hover {
   text-decoration: underline;
+}
+
+.Login__modal {
+  text-decoration: none !important;
+}
+
+.Login__header {
+  color: var(--primaryColor) !important;
+  font-family: var(--primaryFont) !important;
+  text-align: center;
+  font-size: 26px !important;
+}
+
+.Login__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid var(--primaryColor);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.Login__input {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px 0 2px 0;
+}
+
+.Login__form .Login__input label {
+  color: black;
+  font-weight: bolder;
+  font-size: 20px;
+  text-decoration: none;
+  width: 40%;
+  text-align: right;
+}
+
+.Login__form .Login__input input {
+  border-style: none;
+  border-bottom: 2px solid lightgrey;
+  font-size: 20px;
+  width: 100%;
+  margin-left: 10px;
+  padding: 2px;
+}
+
+.Login__form .Login__input input:focus {
+  outline: none;
+  border-bottom: 2px solid var(--primaryColor);
+}
+
+.Login__button {
+  height: 50px;
+  width: 20%;
+  border: 2px solid var(--primaryColor);
+  border-radius: 5px;
+  margin-top: 20px;
+  background-color: lightgrey;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-family: var(--primaryFont);
+}
+
+.Login__button:hover {
+  cursor: pointer;
+  box-shadow: 0 0 7px var(--primaryColor);
+}
+
+.Login__register {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 16px;
+  color: black;
+}
+
+.Login__register a {
+  color: var(--primaryColor);
 }
