@@ -37,6 +37,10 @@
   color: var(--primaryColor);
 }
 
+.Register__benefits p {
+  font-size: 16px;
+}
+
 .Register__form {
   width: 40%;
   margin-top: 20px;
