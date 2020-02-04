@@ -118,13 +118,13 @@
   font-weight: bolder;
   font-size: 20px;
   text-decoration: none;
-  width: 40%;
+  width: 65%;
   text-align: right;
 }
 
 .Login__form .Login__input input {
   border-style: none;
-  border-bottom: 2px solid lightgrey;
+  border: 2px solid lightgrey;
   font-size: 20px;
   width: 100%;
   margin-left: 10px;
@@ -133,7 +133,6 @@
 
 .Login__form .Login__input input:focus {
   outline: none;
-  border-bottom: 2px solid var(--primaryColor);
 }
 
 .Login__button {

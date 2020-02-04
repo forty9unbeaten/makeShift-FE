@@ -79,7 +79,7 @@ class NavBar extends React.Component {
             <Modal.Content>
               <form className="Login__form">
                 <div className="Login__input">
-                  <label htmlFor="username">Username:</label>
+                  <label htmlFor="username">Username/Email</label>
                   <input
                     name="username"
                     type="text"
@@ -89,7 +89,7 @@ class NavBar extends React.Component {
                   />
                 </div>
                 <div className="Login__input">
-                  <label htmlFor="password">Password:</label>
+                  <label htmlFor="password">Password</label>
                   <input
                     name="password"
                     type="password"
