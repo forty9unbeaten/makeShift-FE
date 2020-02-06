@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/makeShift-FE/static/css/main.b1e9ee23.chunk.css",
+    "main.js": "/makeShift-FE/static/js/main.7c55befa.chunk.js",
+    "main.js.map": "/makeShift-FE/static/js/main.7c55befa.chunk.js.map",
+    "runtime-main.js": "/makeShift-FE/static/js/runtime-main.e85259b2.js",
+    "runtime-main.js.map": "/makeShift-FE/static/js/runtime-main.e85259b2.js.map",
+    "static/js/2.913c0aa9.chunk.js": "/makeShift-FE/static/js/2.913c0aa9.chunk.js",
+    "static/js/2.913c0aa9.chunk.js.map": "/makeShift-FE/static/js/2.913c0aa9.chunk.js.map",
+    "index.html": "/makeShift-FE/index.html",
+    "precache-manifest.a920bff16ec2aa14fd4caa2c38a5ff6a.js": "/makeShift-FE/precache-manifest.a920bff16ec2aa14fd4caa2c38a5ff6a.js",
+    "service-worker.js": "/makeShift-FE/service-worker.js",
+    "static/css/main.b1e9ee23.chunk.css.map": "/makeShift-FE/static/css/main.b1e9ee23.chunk.css.map",
+    "static/js/2.913c0aa9.chunk.js.LICENSE": "/makeShift-FE/static/js/2.913c0aa9.chunk.js.LICENSE",
+    "static/media/NotFound.css": "/makeShift-FE/static/media/facepalm.1f0760e5.gif",
+    "static/media/Hero.css": "/makeShift-FE/static/media/hero.3d45c224.png",
+    "static/media/NavBar.css": "/makeShift-FE/static/media/logo.f95f4ef3.png",
+    "static/media/Footer.css": "/makeShift-FE/static/media/logo_white.403e0b11.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e85259b2.js",
+    "static/js/2.913c0aa9.chunk.js",
+    "static/css/main.b1e9ee23.chunk.css",
+    "static/js/main.7c55befa.chunk.js"
+  ]
+}
